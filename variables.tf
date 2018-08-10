@@ -50,6 +50,15 @@ variable "gcp_public_agent_gce_type" {}
 variable "gcp_public_agent_image" {}
 
 #
+variable "gcp_master_public_ssh_key" {}
+
+#
+variable "gcp_private_agent_public_ssh_key" {}
+
+#
+variable "gcp_bootstrap_public_ssh_key" {}
+
+#
 variable "gcp_region" {}
 
 #
