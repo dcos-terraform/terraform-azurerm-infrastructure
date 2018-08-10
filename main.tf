@@ -19,7 +19,6 @@ module "bootstrap" {
   disk_size                 = "${var.gcp_bootstrap_disk_size}"
   disk_type                 = "${var.gcp_bootstrap_disk_type}"
   region                    = "${var.gcp_region}"
-  num_bootstrap             = "${var.gcp_bootstrap_count}"
   machine_type              = "${var.gcp_bootstrap_gce_type}"
   cluster_name              = "${var.cluster_name}"
   public_ssh_key            = "${var.gcp_bootstrap_public_ssh_key}"
