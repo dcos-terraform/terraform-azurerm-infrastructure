@@ -1,28 +1,31 @@
 provider "google" {
- region = "${var.gcp_region}"
+  region = "${var.gcp_region}"
 }
 
 resource "random_id" "id" {
- byte_length = 4
- prefix      = "${var.cluster_name}-"
+  byte_length = 4
+  prefix      = "${var.cluster_name}-"
 }
 
 resource "google_project" "project" {
- count = "${ var.gcp_project_id == "" ? "1" : "0" }"
- name            = "${var.cluster_name}"
- project_id      = "${random_id.id.hex}"
- billing_account = "${var.gcp_billing_account}"
- org_id          = "${var.gcp_org_id}"
+  count           = "${ var.gcp_project_id == "" ? "1" : "0" }"
+  name            = "${var.cluster_name}"
+  project_id      = "${random_id.id.hex}"
+  billing_account = "${var.gcp_billing_account}"
+  org_id          = "${var.gcp_org_id}"
 }
 
 resource "google_project_services" "project" {
- project = "${google_project.project.project_id}"
- services = [
-   "compute.googleapis.com"
- ]
+  project = "${google_project.project.project_id}"
+
+  services = [
+    "compute.googleapis.com",
+  ]
 }
 
-data "google_compute_zones" "available" { project = "${coalesce(var.gcp_project_id, google_project.project.project_id)}" }
+data "google_compute_zones" "available" {
+  project = "${coalesce(var.gcp_project_id, google_project.project.project_id)}"
+}
 
 module "network" {
   source = "../terraform-gcp-network"
@@ -48,7 +51,7 @@ module "bootstrap" {
   ssh_user                  = "${coalesce(var.gcp_bootstrap_ssh_user, var.infra_ssh_user)}"
   bootstrap_subnetwork_name = "${module.network.agent_subnetwork_name}"
   image                     = "${var.gcp_bootstrap_image}"
-  dcos_instance_os = "${coalesce(var.gcp_bootstrap_dcos_instance_os, var.infra_dcos_instance_os)}"
+  dcos_instance_os          = "${coalesce(var.gcp_bootstrap_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
   zone_list = "${data.google_compute_zones.available.names}"
 }
@@ -67,7 +70,7 @@ module "masters" {
   ssh_user               = "${coalesce(var.gcp_master_ssh_user, var.infra_ssh_user)}"
   master_subnetwork_name = "${module.network.master_subnetwork_name}"
   image                  = "${var.gcp_master_image}"
-  dcos_instance_os = "${coalesce(var.gcp_master_dcos_instance_os, var.infra_dcos_instance_os)}"
+  dcos_instance_os       = "${coalesce(var.gcp_master_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
   zone_list = ["${data.google_compute_zones.available.names}"]
 }
@@ -86,7 +89,7 @@ module "private-agent" {
   ssh_user                      = "${coalesce(var.gcp_private_agent_ssh_user, var.infra_ssh_user)}"
   private_agent_subnetwork_name = "${module.network.agent_subnetwork_name}"
   image                         = "${var.gcp_private_agent_image}"
-  dcos_instance_os = "${coalesce(var.gcp_priave_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
+  dcos_instance_os              = "${coalesce(var.gcp_priave_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
   zone_list = ["${data.google_compute_zones.available.names}"]
 }
@@ -105,7 +108,7 @@ module "public-agent" {
   ssh_user                     = "${coalesce(var.gcp_public_agent_ssh_user, var.infra_ssh_user)}"
   public_agent_subnetwork_name = "${module.network.agent_subnetwork_name}"
   image                        = "${var.gcp_public_agent_image}"
-  dcos_instance_os = "${coalesce(var.gcp_public_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
+  dcos_instance_os             = "${coalesce(var.gcp_public_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
   zone_list = ["${data.google_compute_zones.available.names}"]
 }
