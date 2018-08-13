@@ -1,4 +1,28 @@
-data "google_compute_zones" "available" {}
+provider "google" {
+ region = "${var.gcp_region}"
+}
+
+resource "random_id" "id" {
+ byte_length = 4
+ prefix      = "${var.cluster_name}-"
+}
+
+resource "google_project" "project" {
+ count = "${ var.gcp_project_id == "" ? "1" : "0" }"
+ name            = "${var.cluster_name}"
+ project_id      = "${random_id.id.hex}"
+ billing_account = "${var.gcp_billing_account}"
+ org_id          = "${var.gcp_org_id}"
+}
+
+resource "google_project_services" "project" {
+ project = "${google_project.project.project_id}"
+ services = [
+   "compute.googleapis.com"
+ ]
+}
+
+data "google_compute_zones" "available" { project = "${coalesce(var.gcp_project_id, google_project.project.project_id)}" }
 
 module "network" {
   source = "../terraform-gcp-network"
@@ -45,7 +69,7 @@ module "masters" {
   image                  = "${var.gcp_master_image}"
   dcos_instance_os = "${coalesce(var.gcp_master_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
-  zone_list = "${data.google_compute_zones.available.names}"
+  zone_list = ["${data.google_compute_zones.available.names}"]
 }
 
 module "private-agent" {
@@ -64,7 +88,7 @@ module "private-agent" {
   image                         = "${var.gcp_private_agent_image}"
   dcos_instance_os = "${coalesce(var.gcp_priave_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
-  zone_list = "${data.google_compute_zones.available.names}"
+  zone_list = ["${data.google_compute_zones.available.names}"]
 }
 
 module "public-agent" {
@@ -83,7 +107,7 @@ module "public-agent" {
   image                        = "${var.gcp_public_agent_image}"
   dcos_instance_os = "${coalesce(var.gcp_public_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
-  zone_list = "${data.google_compute_zones.available.names}"
+  zone_list = ["${data.google_compute_zones.available.names}"]
 }
 
 #####################################

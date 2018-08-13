@@ -1,6 +1,15 @@
 #
 variable "cluster_name" {}
 
+# GCP Builing Account
+variable "gcp_billing_account" { default = "" }
+
+# GCP Org ID
+variable "gcp_org_id" { default = ""}
+
+# Existing Project ID
+variable "gcp_project_id" { default = "" }
+
 #
 variable "gcp_bootstrap_disk_size" { default = "" }
 
