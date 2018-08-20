@@ -1,6 +1,6 @@
 #
-output "cluster_name" {
-  value = "${var.cluster_name}"
+output "name_prefix" {
+  value = "${var.name_prefix}"
 }
 
 # 
@@ -106,9 +106,4 @@ output "gcp_region" {
 # 
 output "gcp_ssh_key" {
   value = "${var.gcp_ssh_key}"
-}
-
-# Google Provider Project
-output "project_number" {
-  value = "${google_project.project.number}"
 }

@@ -1,5 +1,5 @@
 #
-variable "cluster_name" {}
+variable "name_prefix" {}
 
 # GCP Builing Account
 variable "gcp_billing_account" {
@@ -15,6 +15,9 @@ variable "gcp_org_id" {
 variable "gcp_project_id" {
   default = ""
 }
+
+# GCP Credentials JSON
+variable "gcp_credentials_path_json" {}
 
 #
 variable "gcp_bootstrap_disk_size" {
