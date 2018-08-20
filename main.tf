@@ -40,6 +40,7 @@ module "bootstrap" {
   # Determine if we need to force a particular region
   zone_list  = "${data.google_compute_zones.available.names}"
   project_id = "${var.gcp_project_id}"
+  region      = "${var.gcp_region}"
 }
 
 module "masters" {
@@ -60,6 +61,7 @@ module "masters" {
   # Determine if we need to force a particular region
   zone_list  = "${data.google_compute_zones.available.names}"
   project_id = "${var.gcp_project_id}"
+  region      = "${var.gcp_region}"
 }
 
 module "private-agent" {
@@ -80,6 +82,7 @@ module "private-agent" {
   # Determine if we need to force a particular region
   zone_list  = "${data.google_compute_zones.available.names}"
   project_id = "${var.gcp_project_id}"
+  region      = "${var.gcp_region}"
 }
 
 module "public-agent" {
@@ -100,6 +103,7 @@ module "public-agent" {
   # Determine if we need to force a particular region
   zone_list  = "${data.google_compute_zones.available.names}"
   project_id = "${var.gcp_project_id}"
+  region      = "${var.gcp_region}"
 }
 
 #####################################
