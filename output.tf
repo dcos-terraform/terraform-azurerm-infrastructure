@@ -103,11 +103,6 @@ output "gcp_region" {
   value = "${var.gcp_region}"
 }
 
-# GCP Public SSH Key
-output "gcp_ssh_key" {
-  value = "${var.gcp_ssh_key}"
-}
-
 # Bootstrap public ip
 output "bootstrap_public_ips" {
   value = "${module.bootstrap.public_ips}"
@@ -148,3 +143,22 @@ output "public-agent_private_ips" {
   value = "${module.public-agent.private_ips}"
 }
 
+# Master node tested OSes image
+output "gcp_master_dcos_instance_os" {
+  value = "${module.masters.dcos_instance_os}"
+}
+
+# Public Agent node tested OSes image
+output "gcp_public_agent_dcos_instance_os" {
+  value = "${module.public-agent.dcos_instance_os}"
+}
+
+# Private agent node tested OSes image
+output "gcp_private_agent_dcos_instance_os" {
+  value = "${module.private-agent.dcos_instance_os}"
+}
+
+# Bootstrap node tested OSes image
+output "gcp_bootstrap_dcos_instance_os" {
+  value = "${module.bootstrap.dcos_instance_os}"
+}

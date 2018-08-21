@@ -19,7 +19,7 @@ module "network" {
   gcp_region        = "${var.gcp_region}"
   master_cidr_range = "10.10.0.0/16"
   agent_cidr_range  = "10.11.0.0/16"
-  name_prefix      = "${random_id.id.hex}"
+  name_prefix       = "${random_id.id.hex}"
   project_id        = "${var.gcp_project_id}"
 }
 
@@ -31,8 +31,8 @@ module "bootstrap" {
   disk_size                 = "${coalesce(var.gcp_bootstrap_disk_size, var.infra_disk_size)}"
   disk_type                 = "${coalesce(var.gcp_bootstrap_disk_type, var.infra_disk_type)}"
   machine_type              = "${coalesce(var.gcp_bootstrap_machine_type, var.infra_machine_type)}"
-  name_prefix              = "${random_id.id.hex}"
-  public_ssh_key            = "${coalesce(var.gcp_bootstrap_public_ssh_key, var.infra_public_ssh_key)}"
+  name_prefix               = "${random_id.id.hex}"
+  public_ssh_key            = "${coalesce(var.gcp_bootstrap_public_ssh_key_path, var.infra_public_ssh_key_path)}"
   ssh_user                  = "${coalesce(var.gcp_bootstrap_ssh_user, var.infra_ssh_user)}"
   bootstrap_subnetwork_name = "${module.network.agent_subnetwork_name}"
   image                     = "${var.gcp_bootstrap_image}"
@@ -40,7 +40,7 @@ module "bootstrap" {
   # Determine if we need to force a particular region
   zone_list  = "${data.google_compute_zones.available.names}"
   project_id = "${var.gcp_project_id}"
-  region      = "${var.gcp_region}"
+  region     = "${var.gcp_region}"
 }
 
 module "masters" {
@@ -52,8 +52,8 @@ module "masters" {
   disk_size              = "${coalesce(var.gcp_master_disk_size, var.infra_disk_size)}"
   disk_type              = "${coalesce(var.gcp_master_disk_type, var.infra_disk_type)}"
   machine_type           = "${coalesce(var.gcp_master_machine_type, var.infra_machine_type)}"
-  name_prefix           = "${random_id.id.hex}"
-  public_ssh_key         = "${coalesce(var.gcp_master_public_ssh_key, var.infra_public_ssh_key)}"
+  name_prefix            = "${random_id.id.hex}"
+  public_ssh_key         = "${coalesce(var.gcp_master_public_ssh_key_path, var.infra_public_ssh_key_path)}"
   ssh_user               = "${coalesce(var.gcp_master_ssh_user, var.infra_ssh_user)}"
   master_subnetwork_name = "${module.network.master_subnetwork_name}"
   image                  = "${var.gcp_master_image}"
@@ -61,7 +61,7 @@ module "masters" {
   # Determine if we need to force a particular region
   zone_list  = "${data.google_compute_zones.available.names}"
   project_id = "${var.gcp_project_id}"
-  region      = "${var.gcp_region}"
+  region     = "${var.gcp_region}"
 }
 
 module "private-agent" {
@@ -73,8 +73,8 @@ module "private-agent" {
   disk_size                     = "${coalesce(var.gcp_private_agent_disk_size, var.infra_disk_size)}"
   disk_type                     = "${coalesce(var.gcp_private_agent_disk_type, var.infra_disk_type)}"
   machine_type                  = "${coalesce(var.gcp_private_agent_machine_type, var.infra_machine_type)}"
-  name_prefix                  = "${random_id.id.hex}"
-  public_ssh_key                = "${coalesce(var.gcp_private_agent_public_ssh_key, var.infra_public_ssh_key)}"
+  name_prefix                   = "${random_id.id.hex}"
+  public_ssh_key                = "${coalesce(var.gcp_private_agent_public_ssh_key_path, var.infra_public_ssh_key_path)}"
   ssh_user                      = "${coalesce(var.gcp_private_agent_ssh_user, var.infra_ssh_user)}"
   private_agent_subnetwork_name = "${module.network.agent_subnetwork_name}"
   image                         = "${var.gcp_private_agent_image}"
@@ -82,7 +82,7 @@ module "private-agent" {
   # Determine if we need to force a particular region
   zone_list  = "${data.google_compute_zones.available.names}"
   project_id = "${var.gcp_project_id}"
-  region      = "${var.gcp_region}"
+  region     = "${var.gcp_region}"
 }
 
 module "public-agent" {
@@ -94,8 +94,8 @@ module "public-agent" {
   disk_size                    = "${coalesce(var.gcp_public_agent_disk_size, var.infra_disk_size)}"
   disk_type                    = "${coalesce(var.gcp_public_agent_disk_type, var.infra_disk_type)}"
   machine_type                 = "${coalesce(var.gcp_public_agent_machine_type, var.infra_machine_type)}"
-  name_prefix                 = "${random_id.id.hex}"
-  public_ssh_key               = "${coalesce(var.gcp_public_agent_public_ssh_key, var.infra_public_ssh_key)}"
+  name_prefix                  = "${random_id.id.hex}"
+  public_ssh_key               = "${coalesce(var.gcp_public_agent_public_ssh_key_path, var.infra_public_ssh_key_path)}"
   ssh_user                     = "${coalesce(var.gcp_public_agent_ssh_user, var.infra_ssh_user)}"
   public_agent_subnetwork_name = "${module.network.agent_subnetwork_name}"
   image                        = "${var.gcp_public_agent_image}"
@@ -103,7 +103,7 @@ module "public-agent" {
   # Determine if we need to force a particular region
   zone_list  = "${data.google_compute_zones.available.names}"
   project_id = "${var.gcp_project_id}"
-  region      = "${var.gcp_region}"
+  region     = "${var.gcp_region}"
 }
 
 #####################################

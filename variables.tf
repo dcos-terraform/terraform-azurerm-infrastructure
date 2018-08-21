@@ -100,32 +100,27 @@ variable "gcp_public_agent_image" {
 }
 
 # Master node Public SSH Key
-variable "gcp_master_public_ssh_key" {
+variable "gcp_master_public_ssh_key_path" {
   default = ""
 }
 
 # Private Agent node Public SSH Key 
-variable "gcp_private_agent_public_ssh_key" {
+variable "gcp_private_agent_public_ssh_key_path" {
   default = ""
 }
 
 # Public Agent node Public SSH Key
-variable "gcp_public_agent_public_ssh_key" {
+variable "gcp_public_agent_public_ssh_key_path" {
   default = ""
 }
 
 # Bootstrap Node Public SSH Key
-variable "gcp_bootstrap_public_ssh_key" {
+variable "gcp_bootstrap_public_ssh_key_path" {
   default = ""
 }
 
 # GCP Region
 variable "gcp_region" {
-  default = ""
-}
-
-# GCP Public SSh Key
-variable "gcp_ssh_key" {
   default = ""
 }
 
@@ -155,7 +150,7 @@ variable "infra_ssh_user" {
 }
 
 # Global Infra Public SSH Key
-variable "infra_public_ssh_key" {
+variable "infra_public_ssh_key_path" {
   default = ""
 }
 
