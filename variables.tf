@@ -19,7 +19,7 @@ variable "gcp_project_id" {
 # GCP Credentials JSON
 variable "gcp_credentials_path_json" {}
 
-# Bootstrap node disk size
+# Bootstrap node disk size (gb)
 variable "gcp_bootstrap_disk_size" {
   default = ""
 }
@@ -39,7 +39,7 @@ variable "gcp_bootstrap_image" {
   default = ""
 }
 
-# Master node disk size
+# Master node disk size (gb)
 variable "gcp_master_disk_size" {
   default = ""
 }
@@ -59,7 +59,7 @@ variable "gcp_master_image" {
   default = ""
 }
 
-# Private agent node disk size
+# Private agent node disk size (gb)
 variable "gcp_private_agent_disk_size" {
   default = ""
 }
@@ -79,7 +79,7 @@ variable "gcp_private_agent_image" {
   default = ""
 }
 
-# Public agent disk size
+# Public agent disk size (gb)
 variable "gcp_public_agent_disk_size" {
   default = ""
 }

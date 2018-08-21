@@ -9,7 +9,7 @@ Creates DC/OS Infrastructure
 |------|-------------|:----:|:-----:|:-----:|
 | gcp_billing_account | GCP Builing Account | string | `` | no |
 | gcp_bootstrap_dcos_instance_os | Bootstrap node tested OSes image | string | `` | no |
-| gcp_bootstrap_disk_size | Bootstrap node disk size | string | `` | no |
+| gcp_bootstrap_disk_size | Bootstrap node disk size (gb) | string | `` | no |
 | gcp_bootstrap_disk_type | Bootstrap node disk type. Can be either "pd-ssd", "local-ssd", or "pd-standard". | string | `` | no |
 | gcp_bootstrap_image | Bootstrap node OS image | string | `` | no |
 | gcp_bootstrap_machine_type | Bootstrap node machine type | string | `` | no |
@@ -17,7 +17,7 @@ Creates DC/OS Infrastructure
 | gcp_bootstrap_ssh_user | Bootstrap node SSH User | string | `` | no |
 | gcp_credentials_path_json | GCP Credentials JSON | string | - | yes |
 | gcp_master_dcos_instance_os | Master node tested OSes image | string | `` | no |
-| gcp_master_disk_size | Master node disk size | string | `` | no |
+| gcp_master_disk_size | Master node disk size (gb) | string | `` | no |
 | gcp_master_disk_type | Master node disk type. Can be either "pd-ssd", "local-ssd", or "pd-standard". | string | `` | no |
 | gcp_master_image | Master node OS image | string | `` | no |
 | gcp_master_machine_type | Master node machine type | string | `` | no |
@@ -25,7 +25,7 @@ Creates DC/OS Infrastructure
 | gcp_master_ssh_user | Master node SSH User | string | `` | no |
 | gcp_org_id | GCP Org ID | string | `` | no |
 | gcp_private_agent_dcos_instance_os | Private agent node tested OSes image | string | `` | no |
-| gcp_private_agent_disk_size | Private agent node disk size | string | `` | no |
+| gcp_private_agent_disk_size | Private agent node disk size (gb) | string | `` | no |
 | gcp_private_agent_disk_type | Private agent node disk type. Can be either "pd-ssd", "local-ssd", or "pd-standard". | string | `` | no |
 | gcp_private_agent_image | Private agent node OS image | string | `` | no |
 | gcp_private_agent_machine_type | Private agent node machine type | string | `` | no |
@@ -33,7 +33,7 @@ Creates DC/OS Infrastructure
 | gcp_private_agent_ssh_user | Private Agent ndoe SSH User | string | `` | no |
 | gcp_project_id | Existing Project ID | string | `` | no |
 | gcp_public_agent_dcos_instance_os | Public Agent node tested OSes image | string | `` | no |
-| gcp_public_agent_disk_size | Public agent disk size | string | `` | no |
+| gcp_public_agent_disk_size | Public agent disk size (gb) | string | `` | no |
 | gcp_public_agent_disk_type | Public agent node disk type. Can be either "pd-ssd", "local-ssd", or "pd-standard". | string | `` | no |
 | gcp_public_agent_image | Public agent node OS image | string | `` | no |
 | gcp_public_agent_machine_type | Public agent machine type | string | `` | no |
