@@ -16,6 +16,6 @@ gcp_credentials_path_json = "~/.gcp/demo-bliss-f23c196ae1c5.json"
 ####
 ####
 
-num_masters = "3"
-num_private_agents = "1"
-num_public_agents = "1"
+num_masters = "9"
+num_private_agents = "9"
+num_public_agents = "9"

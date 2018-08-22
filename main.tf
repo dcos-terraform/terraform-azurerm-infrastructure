@@ -16,6 +16,9 @@ module "network" {
 
   # version = "0.0.0"
 
+  providers = {
+    google = "google"
+  }
   gcp_region        = "${var.gcp_region}"
   master_cidr_range = "10.10.0.0/16"
   agent_cidr_range  = "10.11.0.0/16"
@@ -28,6 +31,9 @@ module "bootstrap" {
 
   # version = "0.0.0"
 
+  providers = {
+    google = "google"
+  }
   disk_size                 = "${coalesce(var.gcp_bootstrap_disk_size, var.infra_disk_size)}"
   disk_type                 = "${coalesce(var.gcp_bootstrap_disk_type, var.infra_disk_type)}"
   machine_type              = "${coalesce(var.gcp_bootstrap_machine_type, var.infra_machine_type)}"
@@ -38,9 +44,7 @@ module "bootstrap" {
   image                     = "${var.gcp_bootstrap_image}"
   dcos_instance_os          = "${coalesce(var.gcp_bootstrap_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
-  zone_list  = "${data.google_compute_zones.available.names}"
-  project_id = "${var.gcp_project_id}"
-  region     = "${var.gcp_region}"
+  zone_list = "${data.google_compute_zones.available.names}"
 }
 
 module "masters" {
@@ -48,6 +52,9 @@ module "masters" {
 
   # version = "0.0.0"
 
+  providers = {
+    google = "google"
+  }
   num_masters            = "${var.num_masters}"
   disk_size              = "${coalesce(var.gcp_master_disk_size, var.infra_disk_size)}"
   disk_type              = "${coalesce(var.gcp_master_disk_type, var.infra_disk_type)}"
@@ -59,9 +66,7 @@ module "masters" {
   image                  = "${var.gcp_master_image}"
   dcos_instance_os       = "${coalesce(var.gcp_master_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
-  zone_list  = "${data.google_compute_zones.available.names}"
-  project_id = "${var.gcp_project_id}"
-  region     = "${var.gcp_region}"
+  zone_list = "${data.google_compute_zones.available.names}"
 }
 
 module "private-agent" {
@@ -69,6 +74,9 @@ module "private-agent" {
 
   # version = "0.0.0"
 
+  providers = {
+    google = "google"
+  }
   num_private_agents            = "${var.num_private_agents}"
   disk_size                     = "${coalesce(var.gcp_private_agent_disk_size, var.infra_disk_size)}"
   disk_type                     = "${coalesce(var.gcp_private_agent_disk_type, var.infra_disk_type)}"
@@ -80,9 +88,7 @@ module "private-agent" {
   image                         = "${var.gcp_private_agent_image}"
   dcos_instance_os              = "${coalesce(var.gcp_private_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
-  zone_list  = "${data.google_compute_zones.available.names}"
-  project_id = "${var.gcp_project_id}"
-  region     = "${var.gcp_region}"
+  zone_list = "${data.google_compute_zones.available.names}"
 }
 
 module "public-agent" {
@@ -90,6 +96,9 @@ module "public-agent" {
 
   # version = "0.0.0"
 
+  providers = {
+    google = "google"
+  }
   num_public_agents            = "${var.num_public_agents}"
   disk_size                    = "${coalesce(var.gcp_public_agent_disk_size, var.infra_disk_size)}"
   disk_type                    = "${coalesce(var.gcp_public_agent_disk_type, var.infra_disk_type)}"
@@ -101,9 +110,7 @@ module "public-agent" {
   image                        = "${var.gcp_public_agent_image}"
   dcos_instance_os             = "${coalesce(var.gcp_public_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
-  zone_list  = "${data.google_compute_zones.available.names}"
-  project_id = "${var.gcp_project_id}"
-  region     = "${var.gcp_region}"
+  zone_list = "${data.google_compute_zones.available.names}"
 }
 
 #####################################
