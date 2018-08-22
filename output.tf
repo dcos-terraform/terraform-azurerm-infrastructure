@@ -162,3 +162,8 @@ output "gcp_private_agent_dcos_instance_os" {
 output "gcp_bootstrap_dcos_instance_os" {
   value = "${module.bootstrap.dcos_instance_os}"
 }
+
+# DCOS Version
+output "dcos_version" {
+  value = "${var.dcos_version}"
+}

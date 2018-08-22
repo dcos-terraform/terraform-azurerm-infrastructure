@@ -45,6 +45,7 @@ module "bootstrap" {
   dcos_instance_os          = "${coalesce(var.gcp_bootstrap_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
   zone_list = "${data.google_compute_zones.available.names}"
+  dcos_version             = "${var.dcos_version}"
 }
 
 module "masters" {
@@ -67,6 +68,7 @@ module "masters" {
   dcos_instance_os       = "${coalesce(var.gcp_master_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
   zone_list = "${data.google_compute_zones.available.names}"
+  dcos_version             = "${var.dcos_version}"
 }
 
 module "private-agent" {
@@ -89,6 +91,7 @@ module "private-agent" {
   dcos_instance_os              = "${coalesce(var.gcp_private_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
   zone_list = "${data.google_compute_zones.available.names}"
+  dcos_version             = "${var.dcos_version}"
 }
 
 module "public-agent" {
@@ -111,6 +114,7 @@ module "public-agent" {
   dcos_instance_os             = "${coalesce(var.gcp_public_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
   # Determine if we need to force a particular region
   zone_list = "${data.google_compute_zones.available.names}"
+  dcos_version             = "${var.dcos_version}"
 }
 
 #####################################

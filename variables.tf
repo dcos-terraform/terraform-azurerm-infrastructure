@@ -213,3 +213,8 @@ variable "num_private_agents" {
 variable "num_public_agents" {
   default = "1"
 }
+
+# DCOS Version
+variable "dcos_version" {
+  default = "1.11.4"
+}

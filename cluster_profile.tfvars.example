@@ -12,10 +12,11 @@ gcp_billing_account = "002609-0361C2-BB09D2"
 gcp_project_id = "massive-bliss-781"
 gcp_region = "us-west1"
 gcp_credentials_path_json = "~/.gcp/demo-bliss-f23c196ae1c5.json"
+dcos_version = "1.11.4"
 
 ####
 ####
 
-num_masters = "9"
-num_private_agents = "9"
-num_public_agents = "9"
+num_masters = "3"
+num_private_agents = "1"
+num_public_agents = "1"
