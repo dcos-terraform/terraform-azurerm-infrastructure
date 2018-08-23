@@ -2,145 +2,145 @@
 variable "name_prefix" {}
 
 # GCP Builing Account
-variable "gcp_billing_account" {
+variable "billing_account" {
   default = ""
 }
 
 # GCP Org ID
-variable "gcp_org_id" {
+variable "org_id" {
   default = ""
 }
 
 # Existing Project ID
-variable "gcp_project_id" {
+variable "project_id" {
   default = ""
 }
 
 # GCP Credentials JSON
-variable "gcp_credentials_path_json" {}
+variable "credentials_path_json" {}
 
 # Bootstrap node disk size (gb)
-variable "gcp_bootstrap_disk_size" {
+variable "bootstrap_disk_size" {
   default = ""
 }
 
 # Bootstrap node disk type. Can be either "pd-ssd", "local-ssd", or "pd-standard".
-variable "gcp_bootstrap_disk_type" {
+variable "bootstrap_disk_type" {
   default = ""
 }
 
 # Bootstrap node machine type
-variable "gcp_bootstrap_machine_type" {
+variable "bootstrap_machine_type" {
   default = ""
 }
 
 # Bootstrap node OS image
-variable "gcp_bootstrap_image" {
+variable "bootstrap_image" {
   default = ""
 }
 
 # Master node disk size (gb)
-variable "gcp_master_disk_size" {
+variable "master_disk_size" {
   default = ""
 }
 
 # Master node disk type. Can be either "pd-ssd", "local-ssd", or "pd-standard".
-variable "gcp_master_disk_type" {
+variable "master_disk_type" {
   default = ""
 }
 
 # Master node machine type
-variable "gcp_master_machine_type" {
+variable "master_machine_type" {
   default = ""
 }
 
 # Master node OS image
-variable "gcp_master_image" {
+variable "master_image" {
   default = ""
 }
 
 # Private agent node disk size (gb)
-variable "gcp_private_agent_disk_size" {
+variable "private_agent_disk_size" {
   default = ""
 }
 
 # Private agent node disk type. Can be either "pd-ssd", "local-ssd", or "pd-standard".
-variable "gcp_private_agent_disk_type" {
+variable "private_agent_disk_type" {
   default = ""
 }
 
 # Private agent node machine type
-variable "gcp_private_agent_machine_type" {
+variable "private_agent_machine_type" {
   default = ""
 }
 
 # Private agent node OS image
-variable "gcp_private_agent_image" {
+variable "private_agent_image" {
   default = ""
 }
 
 # Public agent disk size (gb)
-variable "gcp_public_agent_disk_size" {
+variable "public_agent_disk_size" {
   default = ""
 }
 
 # Public agent node disk type. Can be either "pd-ssd", "local-ssd", or "pd-standard".
-variable "gcp_public_agent_disk_type" {
+variable "public_agent_disk_type" {
   default = ""
 }
 
 # Public agent machine type
-variable "gcp_public_agent_machine_type" {
+variable "public_agent_machine_type" {
   default = ""
 }
 
 # Public agent node OS image
-variable "gcp_public_agent_image" {
+variable "public_agent_image" {
   default = ""
 }
 
 # Master node Public SSH Key
-variable "gcp_master_public_ssh_key_path" {
+variable "master_public_ssh_key_path" {
   default = ""
 }
 
 # Private Agent node Public SSH Key 
-variable "gcp_private_agent_public_ssh_key_path" {
+variable "private_agent_public_ssh_key_path" {
   default = ""
 }
 
 # Public Agent node Public SSH Key
-variable "gcp_public_agent_public_ssh_key_path" {
+variable "public_agent_public_ssh_key_path" {
   default = ""
 }
 
 # Bootstrap Node Public SSH Key
-variable "gcp_bootstrap_public_ssh_key_path" {
+variable "bootstrap_public_ssh_key_path" {
   default = ""
 }
 
 # GCP Region
-variable "gcp_region" {
+variable "region" {
   default = ""
 }
 
 # Master node SSH User
-variable "gcp_master_ssh_user" {
+variable "master_ssh_user" {
   default = ""
 }
 
 # Bootstrap node SSH User
-variable "gcp_bootstrap_ssh_user" {
+variable "bootstrap_ssh_user" {
   default = ""
 }
 
 # Public Agent node SSH User
-variable "gcp_public_agent_ssh_user" {
+variable "public_agent_ssh_user" {
   default = ""
 }
 
 # Private Agent ndoe SSH User
-variable "gcp_private_agent_ssh_user" {
+variable "private_agent_ssh_user" {
   default = ""
 }
 
@@ -175,22 +175,22 @@ variable "infra_dcos_instance_os" {
 }
 
 # Master node tested OSes image
-variable "gcp_master_dcos_instance_os" {
+variable "master_dcos_instance_os" {
   default = ""
 }
 
 # Public Agent node tested OSes image
-variable "gcp_public_agent_dcos_instance_os" {
+variable "public_agent_dcos_instance_os" {
   default = ""
 }
 
 # Private agent node tested OSes image
-variable "gcp_private_agent_dcos_instance_os" {
+variable "private_agent_dcos_instance_os" {
   default = ""
 }
 
 # Bootstrap node tested OSes image
-variable "gcp_bootstrap_dcos_instance_os" {
+variable "bootstrap_dcos_instance_os" {
   default = ""
 }
 
