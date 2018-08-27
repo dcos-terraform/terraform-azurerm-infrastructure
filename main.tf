@@ -12,7 +12,7 @@ resource "random_id" "id" {
 }
 
 module "network" {
-  source = "../terraform-gcp-network"
+  source = "dcos-terraform/network/gcp"
 
   # version = "0.0.0"
 
@@ -27,7 +27,7 @@ module "network" {
 }
 
 module "bootstrap" {
-  source = "../terraform-gcp-bootstrap"
+  source = "dcos-terraform/bootstrap/gcp"
 
   # version = "0.0.0"
 
@@ -49,7 +49,7 @@ module "bootstrap" {
 }
 
 module "masters" {
-  source = "../terraform-gcp-masters"
+  source = "dcos-terraform/masters/gcp"
 
   # version = "0.0.0"
 
@@ -72,7 +72,7 @@ module "masters" {
 }
 
 module "private_agents" {
-  source = "../terraform-gcp-private-agents"
+  source = "dcos-terraform/private-agents/gcp"
 
   # version = "0.0.0"
 
@@ -95,7 +95,7 @@ module "private_agents" {
 }
 
 module "public_agents" {
-  source = "../terraform-gcp-public-agents"
+  source = "dcos-terraform/public-agents/gcp"
 
   # version = "0.0.0"
 
