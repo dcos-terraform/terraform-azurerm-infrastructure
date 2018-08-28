@@ -27,7 +27,9 @@ variable "agent_cidr_range" {
 }
 
 # GCP Credentials JSON
-variable "credentials_path_json" {}
+variable "credentials_path_json" { 
+  default = ""
+}
 
 # Bootstrap node disk size (gb)
 variable "bootstrap_disk_size" {
