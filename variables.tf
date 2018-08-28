@@ -211,7 +211,7 @@ variable "bootstrap_dcos_instance_os" {
 
 # Number of Masters
 variable "num_masters" {
-  default = "1"
+  default = "3"
 }
 
 # Number of Private Agents
