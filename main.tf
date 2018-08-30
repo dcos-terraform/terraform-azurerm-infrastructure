@@ -20,8 +20,8 @@ module "network" {
     google = "google"
   }
   region            = "${var.region}"
-  master_cidr_range = "10.10.0.0/16"
-  agent_cidr_range  = "10.11.0.0/16"
+  master_cidr_range = "${var.master_cidr_range}"
+  agent_cidr_range  = "${var.agent_cidr_range}"
   name_prefix       = "${random_id.id.hex}"
   project_id        = "${var.project_id}"
 }
