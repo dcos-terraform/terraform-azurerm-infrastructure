@@ -23,7 +23,7 @@ variable "master_cidr_range" {
 
 # Agent CIDR Range
 variable "agent_cidr_range" {
-  defaut = "10.65.0.0/16"
+  default = "10.65.0.0/16"
 }
 
 # GCP Credentials JSON
