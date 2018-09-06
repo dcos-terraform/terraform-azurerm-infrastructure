@@ -14,8 +14,8 @@ output "bootstrap.disk_type" {
 }
 
 # Deployed bootstrap machine type
-output "bootstrap.machine_type" {
-  value = "${module.bootstrap.machine_type}"
+output "bootstrap.instance_type" {
+  value = "${module.bootstrap.instance_type}"
 }
 
 # Deployed bootstrap image
@@ -24,8 +24,8 @@ output "bootstrap.image" {
 }
 
 # Deployed bootstrap agent SSH user
-output "bootstrap.ssh_user" {
-  value = "${module.bootstrap.ssh_user}"
+output "bootstrap.admin_username" {
+  value = "${module.bootstrap.admin_username}"
 }
 
 # Number of Masters
@@ -44,8 +44,8 @@ output "masters.disk_type" {
 }
 
 # Deployed master machine type
-output "masters.machine_type" {
-  value = "${module.masters.machine_type}"
+output "masters.instance_type" {
+  value = "${module.masters.instance_type}"
 }
 
 # Deployed master image
@@ -54,8 +54,8 @@ output "masters.image" {
 }
 
 # Deployed masters agent SSH user
-output "masters.ssh_user" {
-  value = "${module.masters.ssh_user}"
+output "masters.admin_username" {
+  value = "${module.masters.admin_username}"
 }
 
 # Number of private agents
@@ -74,8 +74,8 @@ output "private_agents.disk_type" {
 }
 
 # Deployed private agent machine type
-output "private_agents.machine_type" {
-  value = "${module.private_agents.machine_type}"
+output "private_agents.instance_type" {
+  value = "${module.private_agents.instance_type}"
 }
 
 # Deployed private agent image
@@ -84,8 +84,8 @@ output "private_agents.image" {
 }
 
 # Deployed private agent SSH user
-output "private_agents.ssh_user" {
-  value = "${module.private_agents.ssh_user}"
+output "private_agents.admin_username" {
+  value = "${module.private_agents.admin_username}"
 }
 
 # Number of public agents
@@ -104,8 +104,8 @@ output "public_agents.disk_type" {
 }
 
 # Deployed public agent machine type
-output "public_agents.machine_type" {
-  value = "${module.public_agents.machine_type}"
+output "public_agents.instance_type" {
+  value = "${module.public_agents.instance_type}"
 }
 
 # provided public agent OS image
@@ -114,23 +114,23 @@ output "public_agents.image" {
 }
 
 # Deployed public agent SSH user
-output "public_agents.ssh_user" {
-  value = "${module.public_agents.ssh_user}"
+output "public_agents.admin_username" {
+  value = "${module.public_agents.admin_username}"
 }
 
-# GCP Region
-output "region" {
-  value = "${var.region}"
+# Azure Region
+output "location" {
+  value = "${var.location}"
 }
 
 # Bootstrap private ip
 output "bootstrap.private_ip" {
-  value = "${module.bootstrap.private_ip}"
+  value = "${module.bootstrap.private_ips}"
 }
 
 # Bootstrap public ip
 output "bootstrap.public_ip" {
-  value = "${module.bootstrap.public_ip}"
+  value = "${module.bootstrap.public_ips}"
 }
 
 # masters public ip

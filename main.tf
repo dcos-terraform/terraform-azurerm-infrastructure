@@ -1,9 +1,5 @@
-data "google_compute_zones" "available" {}
-
-provider "google" {
-  credentials = "${file(var.credentials_path_json)}"
-  region      = "${var.region}"
-  project     = "${var.project_id}"
+provider "azurerm" {
+  #location = "${var.location}"
 }
 
 resource "random_id" "id" {
@@ -11,109 +7,125 @@ resource "random_id" "id" {
   prefix      = "${var.name_prefix}-tf"
 }
 
-module "network" {
-  source = "dcos-terraform/network/gcp"
+# Create a resource group
+resource "azurerm_resource_group" "rg" {
+  name     = "dcos-${random_id.id.hex}"
+  location = "${var.location}"
+}
 
-  # version = "0.0.0"
+module "network" {
+  source  = "dcos-terraform/vnet/azurerm"
+  version = "~> 0.0"
 
   providers = {
-    google = "google"
+    azurerm = "azurerm"
   }
-  region            = "${var.region}"
-  master_cidr_range = "${var.master_cidr_range}"
-  agent_cidr_range  = "${var.agent_cidr_range}"
-  name_prefix       = "${random_id.id.hex}"
-  project_id        = "${var.project_id}"
+
+  location     = "${var.location}"
+  public_cidr  = "${var.public_cidr}"
+  private_cidr = "${var.private_cidr}"
+  name_prefix  = "${random_id.id.hex}"
+
+  #  network_security_group_id = "${module.network.network_security_group_id}"
+  resource_group_name = "${azurerm_resource_group.rg.name}"
 }
 
 module "bootstrap" {
-  source = "dcos-terraform/bootstrap/gcp"
-
-  # version = "0.0.0"
+  source  = "dcos-terraform/bootstrap/azurerm"
+  version = "~> 0.0"
 
   providers = {
-    google = "google"
+    azurerm = "azurerm"
   }
-  disk_size                 = "${coalesce(var.bootstrap_disk_size, var.infra_disk_size)}"
-  disk_type                 = "${coalesce(var.bootstrap_disk_type, var.infra_disk_type)}"
-  machine_type              = "${coalesce(var.bootstrap_machine_type, var.infra_machine_type)}"
-  name_prefix               = "${random_id.id.hex}"
-  public_ssh_key            = "${coalesce(var.bootstrap_public_ssh_key_path, var.infra_public_ssh_key_path)}"
-  ssh_user                  = "${coalesce(var.bootstrap_ssh_user, var.infra_ssh_user)}"
-  bootstrap_subnetwork_name = "${module.network.agent_subnetwork_name}"
-  image                     = "${var.bootstrap_image}"
-  dcos_instance_os          = "${coalesce(var.bootstrap_dcos_instance_os, var.infra_dcos_instance_os)}"
-  # Determine if we need to force a particular region
-  zone_list    = "${data.google_compute_zones.available.names}"
+
+  location            = "${var.location}"
+  disk_size           = "${coalesce(var.bootstrap_disk_size, var.infra_disk_size)}"
+  disk_type           = "${coalesce(var.bootstrap_disk_type, var.infra_disk_type)}"
+  instance_type       = "${coalesce(var.bootstrap_instance_type, var.infra_instance_type)}"
+  name_prefix         = "${random_id.id.hex}"
+  public_ssh_key      = "${coalesce(var.bootstrap_public_ssh_key_path, var.infra_public_ssh_key_path)}"
+  admin_username      = "${coalesce(var.bootstrap_admin_username, var.infra_admin_username)}"
+  image               = "${var.bootstrap_image}"
+  dcos_instance_os    = "${coalesce(var.bootstrap_dcos_instance_os, var.infra_dcos_instance_os)}"
+  resource_group_name = "${azurerm_resource_group.rg.name}"
+  subnet_id           = "${module.network.private_subnet_id}"
+
+  # Determine if we need to force a particular location
   dcos_version = "${var.dcos_version}"
 }
 
 module "masters" {
-  source = "dcos-terraform/masters/gcp"
-
-  # version = "0.0.0"
+  source  = "dcos-terraform/masters/azurerm"
+  version = "~> 0.0"
 
   providers = {
-    google = "google"
+    azurerm = "azurerm"
   }
-  num_masters            = "${var.num_masters}"
-  disk_size              = "${coalesce(var.master_disk_size, var.infra_disk_size)}"
-  disk_type              = "${coalesce(var.master_disk_type, var.infra_disk_type)}"
-  machine_type           = "${coalesce(var.master_machine_type, var.infra_machine_type)}"
-  name_prefix            = "${random_id.id.hex}"
-  public_ssh_key         = "${coalesce(var.master_public_ssh_key_path, var.infra_public_ssh_key_path)}"
-  ssh_user               = "${coalesce(var.master_ssh_user, var.infra_ssh_user)}"
-  master_subnetwork_name = "${module.network.master_subnetwork_name}"
-  image                  = "${var.master_image}"
-  dcos_instance_os       = "${coalesce(var.master_dcos_instance_os, var.infra_dcos_instance_os)}"
-  # Determine if we need to force a particular region
-  zone_list    = "${data.google_compute_zones.available.names}"
+
+  num_masters         = "${var.num_masters}"
+  location            = "${var.location}"
+  disk_size           = "${coalesce(var.master_disk_size, var.infra_disk_size)}"
+  disk_type           = "${coalesce(var.master_disk_type, var.infra_disk_type)}"
+  instance_type       = "${coalesce(var.master_instance_type, var.infra_instance_type)}"
+  name_prefix         = "${random_id.id.hex}"
+  public_ssh_key      = "${coalesce(var.master_public_ssh_key_path, var.infra_public_ssh_key_path)}"
+  admin_username      = "${coalesce(var.master_admin_username, var.infra_admin_username)}"
+  image               = "${var.master_image}"
+  dcos_instance_os    = "${coalesce(var.master_dcos_instance_os, var.infra_dcos_instance_os)}"
+  resource_group_name = "${azurerm_resource_group.rg.name}"
+  subnet_id           = "${module.network.public_subnet_id}"
+
+  # Determine if we need to force a particular location
   dcos_version = "${var.dcos_version}"
 }
 
 module "private_agents" {
-  source = "dcos-terraform/private-agents/gcp"
-
-  # version = "0.0.0"
+  source  = "dcos-terraform/private-agents/azurerm"
+  version = "~> 0.0"
 
   providers = {
-    google = "google"
+    azurerm = "azurerm"
   }
-  num_private_agents            = "${var.num_private_agents}"
-  disk_size                     = "${coalesce(var.private_agent_disk_size, var.infra_disk_size)}"
-  disk_type                     = "${coalesce(var.private_agent_disk_type, var.infra_disk_type)}"
-  machine_type                  = "${coalesce(var.private_agent_machine_type, var.infra_machine_type)}"
-  name_prefix                   = "${random_id.id.hex}"
-  public_ssh_key                = "${coalesce(var.private_agent_public_ssh_key_path, var.infra_public_ssh_key_path)}"
-  ssh_user                      = "${coalesce(var.private_agent_ssh_user, var.infra_ssh_user)}"
-  private_agent_subnetwork_name = "${module.network.agent_subnetwork_name}"
-  image                         = "${var.private_agent_image}"
-  dcos_instance_os              = "${coalesce(var.private_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
-  # Determine if we need to force a particular region
-  zone_list    = "${data.google_compute_zones.available.names}"
+
+  num_private_agents  = "${var.num_private_agents}"
+  location            = "${var.location}"
+  disk_size           = "${coalesce(var.private_agent_disk_size, var.infra_disk_size)}"
+  disk_type           = "${coalesce(var.private_agent_disk_type, var.infra_disk_type)}"
+  instance_type       = "${coalesce(var.private_agent_instance_type, var.infra_instance_type)}"
+  name_prefix         = "${random_id.id.hex}"
+  public_ssh_key      = "${coalesce(var.private_agent_public_ssh_key_path, var.infra_public_ssh_key_path)}"
+  admin_username      = "${coalesce(var.private_agent_admin_username, var.infra_admin_username)}"
+  image               = "${var.private_agent_image}"
+  dcos_instance_os    = "${coalesce(var.private_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
+  resource_group_name = "${azurerm_resource_group.rg.name}"
+  subnet_id           = "${module.network.private_subnet_id}"
+
+  # Determine if we need to force a particular location
   dcos_version = "${var.dcos_version}"
 }
 
 module "public_agents" {
-  source = "dcos-terraform/public-agents/gcp"
-
-  # version = "0.0.0"
+  source  = "dcos-terraform/public-agents/azurerm"
+  version = "~> 0.0"
 
   providers = {
-    google = "google"
+    azurerm = "azurerm"
   }
-  num_public_agents            = "${var.num_public_agents}"
-  disk_size                    = "${coalesce(var.public_agent_disk_size, var.infra_disk_size)}"
-  disk_type                    = "${coalesce(var.public_agent_disk_type, var.infra_disk_type)}"
-  machine_type                 = "${coalesce(var.public_agent_machine_type, var.infra_machine_type)}"
-  name_prefix                  = "${random_id.id.hex}"
-  public_ssh_key               = "${coalesce(var.public_agent_public_ssh_key_path, var.infra_public_ssh_key_path)}"
-  ssh_user                     = "${coalesce(var.public_agent_ssh_user, var.infra_ssh_user)}"
-  public_agent_subnetwork_name = "${module.network.agent_subnetwork_name}"
-  image                        = "${var.public_agent_image}"
-  dcos_instance_os             = "${coalesce(var.public_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
-  # Determine if we need to force a particular region
-  zone_list    = "${data.google_compute_zones.available.names}"
+
+  num_public_agents   = "${var.num_public_agents}"
+  location            = "${var.location}"
+  disk_size           = "${coalesce(var.public_agent_disk_size, var.infra_disk_size)}"
+  disk_type           = "${coalesce(var.public_agent_disk_type, var.infra_disk_type)}"
+  instance_type       = "${coalesce(var.public_agent_instance_type, var.infra_instance_type)}"
+  name_prefix         = "${random_id.id.hex}"
+  public_ssh_key      = "${coalesce(var.public_agent_public_ssh_key_path, var.infra_public_ssh_key_path)}"
+  admin_username      = "${coalesce(var.public_agent_admin_username, var.infra_admin_username)}"
+  image               = "${var.public_agent_image}"
+  dcos_instance_os    = "${coalesce(var.public_agent_dcos_instance_os, var.infra_dcos_instance_os)}"
+  resource_group_name = "${azurerm_resource_group.rg.name}"
+  subnet_id           = "${module.network.public_subnet_id}"
+
+  # Determine if we need to force a particular location
   dcos_version = "${var.dcos_version}"
 }
 
@@ -125,7 +137,6 @@ module "public_agents" {
 
 #module "terraform-dcos-ssh" {
 #  source = "../terraform-dcos-ssh"
-#
-#  # version = "0.0.0"
+#  version = "~> 0.0"
 #}
 
