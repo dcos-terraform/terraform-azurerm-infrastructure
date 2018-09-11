@@ -58,6 +58,11 @@ output "masters.admin_username" {
   value = "${module.masters.admin_username}"
 }
 
+# Master Load Balancer Address
+output "masters.lb.fqdn" {
+  value = "${module.masters.lb.fqdn}"
+}
+
 # Number of private agents
 output "num_private_agents" {
   value = "${var.num_private_agents}"
@@ -116,6 +121,11 @@ output "public_agents.image" {
 # Deployed public agent SSH user
 output "public_agents.admin_username" {
   value = "${module.public_agents.admin_username}"
+}
+
+# Public Agent Load Balancer Address
+output "public_agents.lb.fqdn" {
+  value = "${module.public_agents.lb.fqdn}"
 }
 
 # Azure Region
