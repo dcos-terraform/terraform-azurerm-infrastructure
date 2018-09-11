@@ -210,3 +210,9 @@ variable "num_public_agents" {
 variable "dcos_version" {
   default = "1.11.4"
 }
+
+# Add special tags to the resources created by this module
+variable "tags" {
+  type    = "map"
+  default = {}
+}

@@ -52,6 +52,7 @@ module "bootstrap" {
 
   # Determine if we need to force a particular location
   dcos_version = "${var.dcos_version}"
+  tags = "${var.tags}"
 }
 
 module "masters" {
@@ -77,6 +78,7 @@ module "masters" {
 
   # Determine if we need to force a particular location
   dcos_version = "${var.dcos_version}"
+  tags = "${var.tags}"
 }
 
 module "private_agents" {
@@ -102,6 +104,7 @@ module "private_agents" {
 
   # Determine if we need to force a particular location
   dcos_version = "${var.dcos_version}"
+  tags = "${var.tags}"
 }
 
 module "public_agents" {
@@ -127,6 +130,7 @@ module "public_agents" {
 
   # Determine if we need to force a particular location
   dcos_version = "${var.dcos_version}"
+  tags = "${var.tags}"
 }
 
 #####################################
