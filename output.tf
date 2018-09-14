@@ -28,6 +28,11 @@ output "bootstrap.admin_username" {
   value = "${module.bootstrap.admin_username}"
 }
 
+# Returns the ID of the prereq script
+output "bootstrap.prereq_id" {
+  value = "${module.bootstrap.prereq_id}"
+}
+
 # Number of Masters
 output "num_masters" {
   value = "${var.num_masters}"
@@ -56,6 +61,11 @@ output "masters.image" {
 # Deployed masters agent SSH user
 output "masters.admin_username" {
   value = "${module.masters.admin_username}"
+}
+
+# Returns the ID of the prereq script
+output "masters.prereq_id" {
+  value = "${module.masters.prereq_id}"
 }
 
 # Master Load Balancer Address
@@ -93,6 +103,11 @@ output "private_agents.admin_username" {
   value = "${module.private_agents.admin_username}"
 }
 
+# Returns the ID of the prereq script
+output "private_agents.prereq_id" {
+  value = "${module.private_agents.prereq_id}"
+}
+
 # Number of public agents
 output "num_public_agents" {
   value = "${var.num_public_agents}"
@@ -126,6 +141,11 @@ output "public_agents.admin_username" {
 # Public Agent Load Balancer Address
 output "public_agents.lb.fqdn" {
   value = "${module.public_agents.lb.fqdn}"
+}
+
+# Returns the ID of the prereq script
+output "public_agents.prereq_id" {
+  value = "${module.public_agents.prereq_id}"
 }
 
 # Azure Region

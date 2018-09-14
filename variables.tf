@@ -138,7 +138,7 @@ variable "private_agent_admin_username" {
 
 # Global Infra SSH User
 variable "infra_admin_username" {
-  default = ""
+  default = "dcos_admin"
 }
 
 # Global Infra Public SSH Key
