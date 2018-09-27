@@ -1,3 +1,10 @@
+/**
+ * [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-infrastructure/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-infrastructure/job/master/)
+ * # DC/OS GCP Infrastucture
+ *
+ * Creates DC/OS Infrastructure for Azure
+ */
+
 provider "azurerm" {
   #location = "${var.location}"
 }
