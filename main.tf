@@ -1,8 +1,23 @@
 /**
  * [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-infrastructure/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-infrastructure/job/master/)
- * # DC/OS GCP Infrastucture
+ * # DC/OS Azure Infrastucture
  *
- * Creates DC/OS Infrastructure for Azure
+ * This module creates typical DS/OS infrastructure in Azure.
+ *
+ * ## EXAMPLE
+ *
+ * ```hcl
+ * module "dcos-infrastructure" {
+ *   source  = "terraform-dcos/infrastructure/azurerm"
+ *   version = "~> 0.1"
+ *
+ *   infra_public_ssh_key_path = "~/.ssh/id_rsa.pub"
+ *
+ *   num_masters = "3"
+ *   num_private_agents = "2"
+ *   num_public_agents = "1"
+ * }
+ * ```
  */
 
 provider "azurerm" {

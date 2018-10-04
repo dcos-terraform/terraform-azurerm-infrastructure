@@ -1,7 +1,7 @@
 [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-infrastructure/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-infrastructure/job/master/)
-# DC/OS GCP Infrastucture
+# DC/OS Azure Infrastucture
 
-This module creates typical DS/OS infrastructure in AWS.
+This module creates typical DS/OS infrastructure in Azure.
 
 ## EXAMPLE
 
