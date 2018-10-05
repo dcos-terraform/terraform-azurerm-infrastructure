@@ -1,18 +1,5 @@
-#
-variable "name_prefix" {
-  description = "Cluster Name"
-}
-
-# Master CIDR Range
-variable "public_cidr" {
-  description = "public cidr"
-  default     = "10.32.0.0/22"
-}
-
-# Agent CIDR Range
-variable "private_cidr" {
-  description = "private cidr"
-  default     = "10.32.4.0/22"
+variable "cluster_name" {
+  description = "Name of the DC/OS cluster"
 }
 
 # Bootstrap node disk size (gb)
@@ -21,16 +8,16 @@ variable "bootstrap_disk_size" {
   default     = ""
 }
 
-# Bootstrap node disk type. 
+# Bootstrap node disk type.
 variable "bootstrap_disk_type" {
   description = "bootstrap disk type"
-  default     = ""
+  default     = "Standard_LRS"
 }
 
 # Bootstrap node machine type
 variable "bootstrap_instance_type" {
   description = "[BOOTSTRAP] Instance type"
-  default     = ""
+  default     = "Standard_B2s"
 }
 
 # Bootstrap node OS image
@@ -45,16 +32,16 @@ variable "master_disk_size" {
   default     = ""
 }
 
-# Master node disk type. 
+# Master node disk type.
 variable "master_disk_type" {
   description = "master disk type"
-  default     = ""
+  default     = "Standard_LRS"
 }
 
 # Master node machine type
 variable "master_instance_type" {
   description = "master instance type"
-  default     = ""
+  default     = "Standard_D4s_v3"
 }
 
 # Master node OS image
@@ -69,16 +56,16 @@ variable "private_agent_disk_size" {
   default     = ""
 }
 
-# Private agent node disk type. 
+# Private agent node disk type.
 variable "private_agent_disk_type" {
   description = "private agent disk type"
-  default     = ""
+  default     = "Standard_LRS"
 }
 
 # Private agent node machine type
 variable "private_agent_instance_type" {
   description = "private agent instance type"
-  default     = ""
+  default     = "Standard_D4s_v3"
 }
 
 # Private agent node OS image
@@ -93,16 +80,16 @@ variable "public_agent_disk_size" {
   default     = ""
 }
 
-# Public agent node disk type. 
+# Public agent node disk type.
 variable "public_agent_disk_type" {
   description = "public agent disk type"
-  default     = ""
+  default     = "Standard_LRS"
 }
 
 # Public agent machine type
 variable "public_agent_instance_type" {
   description = "public agent instance type"
-  default     = ""
+  default     = "Standard_D4s_v3"
 }
 
 # Public agent node OS image
@@ -117,7 +104,7 @@ variable "master_public_ssh_key_path" {
   default     = ""
 }
 
-# Private Agent node Public SSH Key 
+# Private Agent node Public SSH Key
 variable "private_agent_public_ssh_key_path" {
   description = "private agent public ssh key path"
   default     = ""
@@ -171,10 +158,13 @@ variable "infra_admin_username" {
   default     = "dcos_admin"
 }
 
-# Global Infra Public SSH Key
-variable "infra_public_ssh_key_path" {
-  description = "infra public ssh key path"
+variable "ssh_public_key" {
+  description = "SSH public key in authorized keys format (e.g. 'ssh-rsa ..') to be used with the instances. Make sure you added this key to your ssh-agent."
   default     = ""
+}
+
+variable "ssh_public_key_file" {
+  description = "Path to SSH public key. This is mandatory but can be set to an empty string if you want to use ssh_public_key with the key as string."
 }
 
 # Global Infra Disk Type
@@ -198,7 +188,7 @@ variable "infra_instance_type" {
 # Global Infra Tested OSes Image
 variable "infra_dcos_instance_os" {
   description = "infra dcos instance os"
-  default     = ""
+  default     = "centos_7.3"
 }
 
 # Master node tested OSes image
@@ -259,4 +249,14 @@ variable "tags" {
   description = "Add custom tags to all resources"
   type        = "map"
   default     = {}
+}
+
+variable "subnet_range" {
+  description = "Private IP space to be used in CIDR format"
+  default     = "172.31.0.0/16"
+}
+
+variable "admin_ips" {
+  description = "List of CIDR admin IPs"
+  type        = "list"
 }
