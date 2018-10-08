@@ -33,6 +33,7 @@ resource "random_id" "id" {
 resource "azurerm_resource_group" "rg" {
   name     = "dcos-${random_id.id.hex}"
   location = "${var.location}"
+  tags     = "${var.tags}"
 }
 
 module "network" {
@@ -48,6 +49,7 @@ module "network" {
   location     = "${var.location}"
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
+  tags                = "${var.tags}"
 }
 
 module "network-security-group" {
@@ -64,6 +66,7 @@ module "network-security-group" {
   admin_ips    = ["${var.admin_ips}"]
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
+  tags                = "${var.tags}"
 }
 
 module "loadbalancers" {
@@ -79,6 +82,7 @@ module "loadbalancers" {
   subnet_id    = "${module.network.subnet_id}"
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
+  tags                = "${var.tags}"
 }
 
 module "bootstrap" {
