@@ -20,18 +20,11 @@
  * ```
  */
 
-provider "azurerm" {
-  #location = "${var.location}"
-}
-
-resource "random_id" "id" {
-  byte_length = 2
-  prefix      = "${var.cluster_name}-tf"
-}
+provider "azurerm" {}
 
 # Create a resource group
 resource "azurerm_resource_group" "rg" {
-  name     = "dcos-${random_id.id.hex}"
+  name     = "dcos-${var.cluster_name}"
   location = "${var.location}"
   tags     = "${var.tags}"
 }
@@ -45,7 +38,7 @@ module "network" {
   }
 
   subnet_range = "${var.subnet_range}"
-  cluster_name = "${random_id.id.hex}"
+  cluster_name = "${var.cluster_name}"
   location     = "${var.location}"
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
@@ -62,7 +55,7 @@ module "network-security-group" {
 
   location     = "${var.location}"
   subnet_range = "${var.subnet_range}"
-  cluster_name = "${random_id.id.hex}"
+  cluster_name = "${var.cluster_name}"
   admin_ips    = ["${var.admin_ips}"]
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
@@ -78,7 +71,7 @@ module "loadbalancers" {
   }
 
   location     = "${var.location}"
-  cluster_name = "${random_id.id.hex}"
+  cluster_name = "${var.cluster_name}"
   subnet_id    = "${module.network.subnet_id}"
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
@@ -97,7 +90,7 @@ module "bootstrap" {
   disk_size                 = "${coalesce(var.bootstrap_disk_size, var.infra_disk_size)}"
   disk_type                 = "${coalesce(var.bootstrap_disk_type, var.infra_disk_type)}"
   instance_type             = "${coalesce(var.bootstrap_instance_type, var.infra_instance_type)}"
-  name_prefix               = "${random_id.id.hex}"
+  name_prefix               = "${var.cluster_name}"
   public_ssh_key            = "${var.ssh_public_key_file}"
   admin_username            = "${coalesce(var.bootstrap_admin_username, var.infra_admin_username)}"
   image                     = "${var.bootstrap_image}"
@@ -124,7 +117,7 @@ module "masters" {
   disk_size                    = "${coalesce(var.master_disk_size, var.infra_disk_size)}"
   disk_type                    = "${coalesce(var.master_disk_type, var.infra_disk_type)}"
   instance_type                = "${coalesce(var.master_instance_type, var.infra_instance_type)}"
-  name_prefix                  = "${random_id.id.hex}"
+  name_prefix                  = "${var.cluster_name}"
   public_ssh_key               = "${var.ssh_public_key_file}"
   admin_username               = "${coalesce(var.master_admin_username, var.infra_admin_username)}"
   image                        = "${var.master_image}"
@@ -153,7 +146,7 @@ module "private_agents" {
   disk_size                 = "${coalesce(var.private_agent_disk_size, var.infra_disk_size)}"
   disk_type                 = "${coalesce(var.private_agent_disk_type, var.infra_disk_type)}"
   instance_type             = "${coalesce(var.private_agent_instance_type, var.infra_instance_type)}"
-  name_prefix               = "${random_id.id.hex}"
+  name_prefix               = "${var.cluster_name}"
   public_ssh_key            = "${var.ssh_public_key_file}"
   admin_username            = "${coalesce(var.private_agent_admin_username, var.infra_admin_username)}"
   image                     = "${var.private_agent_image}"
@@ -180,7 +173,7 @@ module "public_agents" {
   disk_size                   = "${coalesce(var.public_agent_disk_size, var.infra_disk_size)}"
   disk_type                   = "${coalesce(var.public_agent_disk_type, var.infra_disk_type)}"
   instance_type               = "${coalesce(var.public_agent_instance_type, var.infra_instance_type)}"
-  name_prefix                 = "${random_id.id.hex}"
+  name_prefix                 = "${var.cluster_name}"
   public_ssh_key              = "${var.ssh_public_key_file}"
   admin_username              = "${coalesce(var.public_agent_admin_username, var.infra_admin_username)}"
   image                       = "${var.public_agent_image}"
