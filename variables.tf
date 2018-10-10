@@ -23,7 +23,8 @@ variable "bootstrap_instance_type" {
 # Bootstrap node OS image
 variable "bootstrap_image" {
   description = "bootstrap image"
-  default     = ""
+  type        = "map"
+  default     = {}
 }
 
 # Master node disk size (gb)
@@ -47,7 +48,8 @@ variable "master_instance_type" {
 # Master node OS image
 variable "master_image" {
   description = "master image"
-  default     = ""
+  type        = "map"
+  default     = {}
 }
 
 # Private agent node disk size (gb)
@@ -71,7 +73,8 @@ variable "private_agent_instance_type" {
 # Private agent node OS image
 variable "private_agent_image" {
   description = "private agent image"
-  default     = ""
+  type        = "map"
+  default     = {}
 }
 
 # Public agent disk size (gb)
@@ -95,7 +98,8 @@ variable "public_agent_instance_type" {
 # Public agent node OS image
 variable "public_agent_image" {
   description = "public agent image"
-  default     = ""
+  type        = "map"
+  default     = {}
 }
 
 # Master node Public SSH Key

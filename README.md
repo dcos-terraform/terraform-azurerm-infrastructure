@@ -28,7 +28,7 @@ module "dcos-infrastructure" {
 | bootstrap_dcos_instance_os | bootstrap dcos instance os | string | `` | no |
 | bootstrap_disk_size | bootstrap disk size | string | `` | no |
 | bootstrap_disk_type | bootstrap disk type | string | `Standard_LRS` | no |
-| bootstrap_image | bootstrap image | string | `` | no |
+| bootstrap_image | bootstrap image | map | `<map>` | no |
 | bootstrap_instance_type | [BOOTSTRAP] Instance type | string | `Standard_B2s` | no |
 | bootstrap_public_ssh_key_path | bootstrap public ssh key path | string | `` | no |
 | cluster_name | Name of the DC/OS cluster | string | - | yes |
@@ -43,7 +43,7 @@ module "dcos-infrastructure" {
 | master_dcos_instance_os | master dcos instance os | string | `` | no |
 | master_disk_size | master disk size | string | `` | no |
 | master_disk_type | master disk type | string | `Standard_LRS` | no |
-| master_image | master image | string | `` | no |
+| master_image | master image | map | `<map>` | no |
 | master_instance_type | master instance type | string | `Standard_D4s_v3` | no |
 | master_public_ssh_key_path | master public ssh key path | string | `` | no |
 | num_masters | Specify the amount of masters. For redundancy you should have at least 3 | string | `3` | no |
@@ -53,14 +53,14 @@ module "dcos-infrastructure" {
 | private_agent_dcos_instance_os | private agent dcos instance os | string | `` | no |
 | private_agent_disk_size | private agent disk size | string | `` | no |
 | private_agent_disk_type | private agent disk type | string | `Standard_LRS` | no |
-| private_agent_image | private agent image | string | `` | no |
+| private_agent_image | private agent image | map | `<map>` | no |
 | private_agent_instance_type | private agent instance type | string | `Standard_D4s_v3` | no |
 | private_agent_public_ssh_key_path | private agent public ssh key path | string | `` | no |
 | public_agent_admin_username | public agent admin username | string | `` | no |
 | public_agent_dcos_instance_os | public agent dcos instance os | string | `` | no |
 | public_agent_disk_size | public agent disk size | string | `` | no |
 | public_agent_disk_type | public agent disk type | string | `Standard_LRS` | no |
-| public_agent_image | public agent image | string | `` | no |
+| public_agent_image | public agent image | map | `<map>` | no |
 | public_agent_instance_type | public agent instance type | string | `Standard_D4s_v3` | no |
 | public_agent_public_ssh_key_path | public agent public ssh key path | string | `` | no |
 | ssh_public_key | SSH public key in authorized keys format (e.g. 'ssh-rsa ..') to be used with the instances. Make sure you added this key to your ssh-agent. | string | `` | no |
