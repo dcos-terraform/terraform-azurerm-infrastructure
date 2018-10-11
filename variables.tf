@@ -15,7 +15,7 @@ variable "bootstrap_disk_type" {
 }
 
 # Bootstrap node machine type
-variable "bootstrap_instance_type" {
+variable "bootstrap_vm_size" {
   description = "[BOOTSTRAP] Instance type"
   default     = "Standard_B2s"
 }
@@ -28,94 +28,94 @@ variable "bootstrap_image" {
 }
 
 # Master node disk size (gb)
-variable "master_disk_size" {
+variable "masters_disk_size" {
   description = "master disk size"
   default     = ""
 }
 
 # Master node disk type.
-variable "master_disk_type" {
+variable "masters_disk_type" {
   description = "master disk type"
   default     = "Standard_LRS"
 }
 
 # Master node machine type
-variable "master_instance_type" {
+variable "masters_vm_size" {
   description = "master instance type"
   default     = "Standard_D4s_v3"
 }
 
 # Master node OS image
-variable "master_image" {
+variable "masters_image" {
   description = "master image"
   type        = "map"
   default     = {}
 }
 
 # Private agent node disk size (gb)
-variable "private_agent_disk_size" {
+variable "private_agents_disk_size" {
   description = "private agent disk size"
   default     = ""
 }
 
 # Private agent node disk type.
-variable "private_agent_disk_type" {
+variable "private_agents_disk_type" {
   description = "private agent disk type"
   default     = "Standard_LRS"
 }
 
 # Private agent node machine type
-variable "private_agent_instance_type" {
+variable "private_agents_vm_size" {
   description = "private agent instance type"
   default     = "Standard_D4s_v3"
 }
 
 # Private agent node OS image
-variable "private_agent_image" {
+variable "private_agents_image" {
   description = "private agent image"
   type        = "map"
   default     = {}
 }
 
 # Public agent disk size (gb)
-variable "public_agent_disk_size" {
+variable "public_agents_disk_size" {
   description = "public agent disk size"
   default     = ""
 }
 
 # Public agent node disk type.
-variable "public_agent_disk_type" {
+variable "public_agents_disk_type" {
   description = "public agent disk type"
   default     = "Standard_LRS"
 }
 
 # Public agent machine type
-variable "public_agent_instance_type" {
+variable "public_agents_vm_size" {
   description = "public agent instance type"
   default     = "Standard_D4s_v3"
 }
 
 # Public agent node OS image
-variable "public_agent_image" {
+variable "public_agents_image" {
   description = "public agent image"
   type        = "map"
   default     = {}
 }
 
 # Master node Public SSH Key
-variable "master_public_ssh_key_path" {
+variable "masters_public_ssh_key_path" {
   description = "master public ssh key path"
   default     = ""
 }
 
 # Private Agent node Public SSH Key
-variable "private_agent_public_ssh_key_path" {
+variable "private_agents_public_ssh_key_path" {
   description = "private agent public ssh key path"
   default     = ""
 }
 
 # Public Agent node Public SSH Key
-variable "public_agent_public_ssh_key_path" {
+variable "public_agents_public_ssh_key_path" {
   description = "public agent public ssh key path"
   default     = ""
 }
@@ -133,7 +133,7 @@ variable "location" {
 }
 
 # Master node SSH User
-variable "master_admin_username" {
+variable "masters_admin_username" {
   description = "master admin username"
   default     = ""
 }
@@ -145,13 +145,13 @@ variable "bootstrap_admin_username" {
 }
 
 # Public Agent node SSH User
-variable "public_agent_admin_username" {
+variable "public_agents_admin_username" {
   description = "public agent admin username"
   default     = ""
 }
 
 # Private Agent ndoe SSH User
-variable "private_agent_admin_username" {
+variable "private_agents_admin_username" {
   description = "private agent admin username"
   default     = ""
 }
@@ -184,7 +184,7 @@ variable "infra_disk_size" {
 }
 
 # Global Infra Machine Type
-variable "infra_instance_type" {
+variable "infra_vm_size" {
   description = "infra instance type"
   default     = "Standard_DS11_v2"
 }
@@ -196,19 +196,19 @@ variable "infra_dcos_instance_os" {
 }
 
 # Master node tested OSes image
-variable "master_dcos_instance_os" {
+variable "masters_dcos_instance_os" {
   description = "master dcos instance os"
   default     = ""
 }
 
 # Public Agent node tested OSes image
-variable "public_agent_dcos_instance_os" {
+variable "public_agents_dcos_instance_os" {
   description = "public agent dcos instance os"
   default     = ""
 }
 
 # Private agent node tested OSes image
-variable "private_agent_dcos_instance_os" {
+variable "private_agents_dcos_instance_os" {
   description = "private agent dcos instance os"
   default     = ""
 }
