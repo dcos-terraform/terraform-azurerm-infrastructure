@@ -49,13 +49,13 @@ output "public_agents.prereq_id" {
 # Bootstrap private ip
 output "bootstrap.private_ip" {
   description = "Private IP of the bootstrap instance"
-  value       = "${module.bootstrap.private_ips}"
+  value       = "${module.bootstrap.private_ip}"
 }
 
 # Bootstrap public ip
 output "bootstrap.public_ip" {
   description = "Public IP of the bootstrap instance"
-  value       = "${module.bootstrap.public_ips}"
+  value       = "${module.bootstrap.public_ip}"
 }
 
 # masters public ip
