@@ -56,6 +56,7 @@ module "dcos-infrastructure" {
 | private_agents_image | private agent image | map | `<map>` | no |
 | private_agents_public_ssh_key_path | private agent public ssh key path | string | `` | no |
 | private_agents_vm_size | private agent instance type | string | `Standard_D4s_v3` | no |
+| public_agents_additional_ports | List of additional ports on public agents (in addition to 80 and 443) | string | `<list>` | no |
 | public_agents_admin_username | public agent admin username | string | `` | no |
 | public_agents_dcos_instance_os | public agent dcos instance os | string | `` | no |
 | public_agents_disk_size | public agent disk size | string | `` | no |

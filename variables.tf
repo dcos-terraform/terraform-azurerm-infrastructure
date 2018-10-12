@@ -264,3 +264,8 @@ variable "admin_ips" {
   description = "List of CIDR admin IPs"
   type        = "list"
 }
+
+variable "public_agents_additional_ports" {
+  description = "List of additional ports on public agents (in addition to 80 and 443)"
+  default     = []
+}

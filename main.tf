@@ -20,6 +20,14 @@
  * ```
  */
 
+data "null_data_source" "lb_rules" {
+  count = "${length(var.public_agents_additional_ports)}"
+
+  inputs = {
+    frontend_port = "${element(var.public_agents_additional_ports, count.index)}"
+  }
+}
+
 provider "azurerm" {}
 
 # Create a resource group
@@ -53,10 +61,11 @@ module "network-security-group" {
     azurerm = "azurerm"
   }
 
-  location     = "${var.location}"
-  subnet_range = "${var.subnet_range}"
-  cluster_name = "${var.cluster_name}"
-  admin_ips    = ["${var.admin_ips}"]
+  location                       = "${var.location}"
+  subnet_range                   = "${var.subnet_range}"
+  cluster_name                   = "${var.cluster_name}"
+  admin_ips                      = ["${var.admin_ips}"]
+  public_agents_additional_ports = ["${var.public_agents_additional_ports}"]
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
   tags                = "${var.tags}"
@@ -70,9 +79,10 @@ module "loadbalancers" {
     azurerm = "azurerm"
   }
 
-  location     = "${var.location}"
-  cluster_name = "${var.cluster_name}"
-  subnet_id    = "${module.network.subnet_id}"
+  location                       = "${var.location}"
+  cluster_name                   = "${var.cluster_name}"
+  subnet_id                      = "${module.network.subnet_id}"
+  public_agents_additional_rules = ["${data.null_data_source.lb_rules.*.outputs}"]
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
   tags                = "${var.tags}"
