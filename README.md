@@ -24,46 +24,42 @@ module "dcos-infrastructure" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | admin_ips | List of CIDR admin IPs | list | - | yes |
-| bootstrap_admin_username | bootstrap admin username | string | `` | no |
-| bootstrap_dcos_instance_os | bootstrap dcos instance os | string | `` | no |
-| bootstrap_disk_size | bootstrap disk size | string | `` | no |
-| bootstrap_disk_type | bootstrap disk type | string | `Standard_LRS` | no |
-| bootstrap_image | bootstrap image | map | `<map>` | no |
-| bootstrap_public_ssh_key_path | bootstrap public ssh key path | string | `` | no |
-| bootstrap_vm_size | [BOOTSTRAP] Instance type | string | `Standard_B2s` | no |
+| bootstrap_admin_username | Bootstrap node SSH User | string | `` | no |
+| bootstrap_dcos_instance_os | Bootstrap node tested OSes image | string | `` | no |
+| bootstrap_disk_size | Bootstrap node disk size (gb) | string | `` | no |
+| bootstrap_disk_type | Bootstrap node disk type. | string | `Standard_LRS` | no |
+| bootstrap_image | [BOOTSTRAP] Image to be used | map | `<map>` | no |
+| bootstrap_vm_size | [BOOTSTRAP] Azure virtual machine size | string | `Standard_B2s` | no |
 | cluster_name | Name of the DC/OS cluster | string | - | yes |
 | dcos_version | Specifies which DC/OS version instruction to use. Options: 1.9.0, 1.8.8, etc. See dcos_download_path or dcos_version tree for a full list. | string | `1.11.4` | no |
-| infra_admin_username | infra admin username | string | `dcos_admin` | no |
-| infra_dcos_instance_os | infra dcos instance os | string | `centos_7.3` | no |
-| infra_disk_size | infra disk size | string | `128` | no |
-| infra_disk_type | infra disk type | string | `Standard_LRS` | no |
-| infra_vm_size | infra instance type | string | `Standard_DS11_v2` | no |
-| location | location | string | `` | no |
-| masters_admin_username | master admin username | string | `` | no |
-| masters_dcos_instance_os | master dcos instance os | string | `` | no |
-| masters_disk_size | master disk size | string | `` | no |
-| masters_disk_type | master disk type | string | `Standard_LRS` | no |
-| masters_image | master image | map | `<map>` | no |
-| masters_public_ssh_key_path | master public ssh key path | string | `` | no |
-| masters_vm_size | master instance type | string | `Standard_D4s_v3` | no |
+| infra_admin_username | Global Infra SSH User | string | `dcos_admin` | no |
+| infra_dcos_instance_os | Global Infra Tested OSes Image | string | `centos_7.3` | no |
+| infra_disk_size | Global Infra Disk Size | string | `128` | no |
+| infra_disk_type | Global Infra Disk Type | string | `Standard_LRS` | no |
+| infra_vm_size | Global Infra Machine Type | string | `Standard_DS11_v2` | no |
+| location | Azure Region | string | `` | no |
+| masters_admin_username | Master node SSH User | string | `` | no |
+| masters_dcos_instance_os | Master node tested OSes image | string | `` | no |
+| masters_disk_size | Masters node disk size (gb) | string | `` | no |
+| masters_disk_type | Masters node disk type. | string | `Standard_LRS` | no |
+| masters_image | [MASTERS] Image to be used | map | `<map>` | no |
+| masters_vm_size | [MASTERS] Azure virtual machine size | string | `Standard_D4s_v3` | no |
 | num_masters | Specify the amount of masters. For redundancy you should have at least 3 | string | `3` | no |
 | num_private_agents | Specify the amount of private agents. These agents will provide your main resources | string | `1` | no |
 | num_public_agents | Specify the amount of public agents. These agents will host marathon-lb and edgelb | string | `1` | no |
-| private_agents_admin_username | private agent admin username | string | `` | no |
-| private_agents_dcos_instance_os | private agent dcos instance os | string | `` | no |
-| private_agents_disk_size | private agent disk size | string | `` | no |
-| private_agents_disk_type | private agent disk type | string | `Standard_LRS` | no |
-| private_agents_image | private agent image | map | `<map>` | no |
-| private_agents_public_ssh_key_path | private agent public ssh key path | string | `` | no |
+| private_agents_admin_username | Private Agent ndoe SSH User | string | `` | no |
+| private_agents_dcos_instance_os | Private agent node tested OSes image | string | `` | no |
+| private_agents_disk_size | Private agent node disk size (gb) | string | `` | no |
+| private_agents_disk_type | Private agent node disk type. | string | `Standard_LRS` | no |
+| private_agents_image | [PRIVATE AGENTS] Image to be used | map | `<map>` | no |
 | private_agents_vm_size | private agent instance type | string | `Standard_D4s_v3` | no |
-| public_agents_additional_ports | List of additional ports on public agents (in addition to 80 and 443) | string | `<list>` | no |
-| public_agents_admin_username | public agent admin username | string | `` | no |
-| public_agents_dcos_instance_os | public agent dcos instance os | string | `` | no |
-| public_agents_disk_size | public agent disk size | string | `` | no |
-| public_agents_disk_type | public agent disk type | string | `Standard_LRS` | no |
-| public_agents_image | public agent image | map | `<map>` | no |
-| public_agents_public_ssh_key_path | public agent public ssh key path | string | `` | no |
-| public_agents_vm_size | public agent instance type | string | `Standard_D4s_v3` | no |
+| public_agents_additional_ports | List of additional ports allowed for public access on public agents (80 and 443 open by default) | string | `<list>` | no |
+| public_agents_admin_username | Public Agent node SSH User | string | `` | no |
+| public_agents_dcos_instance_os | Public Agent node tested OSes image | string | `` | no |
+| public_agents_disk_size | Public agent disk size (gb) | string | `` | no |
+| public_agents_disk_type | Public agent node disk type. | string | `Standard_LRS` | no |
+| public_agents_image | [PUBLIC AGENTS] Image to be used | map | `<map>` | no |
+| public_agents_vm_size | [PUBLIC AGENTS] Azure virtual machine size | string | `Standard_D4s_v3` | no |
 | ssh_public_key | SSH public key in authorized keys format (e.g. 'ssh-rsa ..') to be used with the instances. Make sure you added this key to your ssh-agent. | string | `` | no |
 | ssh_public_key_file | Path to SSH public key. This is mandatory but can be set to an empty string if you want to use ssh_public_key with the key as string. | string | - | yes |
 | subnet_range | Private IP space to be used in CIDR format | string | `172.31.0.0/16` | no |
