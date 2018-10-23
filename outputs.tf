@@ -18,7 +18,7 @@ output "masters.admin_username" {
 
 # Returns the ID of the prereq script
 output "masters.prereq_id" {
-  description = "Returns the ID of the prereq script (if image are not used)"
+  description = "Returns the ID of the prereq script for masters (if user_data or ami are not used)"
   value       = "${module.masters.prereq_id}"
 }
 
@@ -30,7 +30,7 @@ output "private_agents.admin_username" {
 
 # Returns the ID of the prereq script
 output "private_agents.prereq_id" {
-  description = "Returns the ID of the prereq script (if image are not used)"
+  description = "Returns the ID of the prereq script for private agents (if image are not used)"
   value       = "${module.private_agents.prereq_id}"
 }
 
@@ -84,13 +84,13 @@ output "private_agents.private_ips" {
 
 # public_agent public ip
 output "public_agents.public_ips" {
-  description = "Private Agent public IPs"
+  description = "Public Agent public IPs"
   value       = "${module.public_agents.public_ips}"
 }
 
 # public_agent private ip
 output "public_agents.private_ips" {
-  description = "Private Agent instances private IPs"
+  description = "Public Agent instances private IPs"
   value       = "${module.public_agents.private_ips}"
 }
 
