@@ -52,7 +52,7 @@ module "dcos-infrastructure" {
 | private_agents_disk_size | Private agent node disk size (gb) | string | `` | no |
 | private_agents_disk_type | Private agent node disk type. | string | `Standard_LRS` | no |
 | private_agents_image | [PRIVATE AGENTS] Image to be used | map | `<map>` | no |
-| private_agents_vm_size | private agent instance type | string | `Standard_D4s_v3` | no |
+| private_agents_vm_size | [PRIVATE AGENTS] Azure virtual machine size | string | `Standard_D4s_v3` | no |
 | public_agents_additional_ports | List of additional ports allowed for public access on public agents (80 and 443 open by default) | string | `<list>` | no |
 | public_agents_admin_username | Public Agent node SSH User | string | `` | no |
 | public_agents_dcos_instance_os | Public Agent node tested OSes image | string | `` | no |

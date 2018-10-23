@@ -66,7 +66,7 @@ variable "private_agents_disk_type" {
 
 # Private agent node machine type
 variable "private_agents_vm_size" {
-  description = "private agent instance type"
+  description = "[PRIVATE AGENTS] Azure virtual machine size"
   default     = "Standard_D4s_v3"
 }
 
