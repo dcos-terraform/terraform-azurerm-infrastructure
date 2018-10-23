@@ -1,48 +1,48 @@
 # Deployed bootstrap agent SSH user
 output "bootstrap.admin_username" {
-  description = "bootstrap.admin username"
+  description = "Bootstrap node SSH User"
   value       = "${module.bootstrap.admin_username}"
 }
 
 # Returns the ID of the prereq script
 output "bootstrap.prereq_id" {
-  description = "bootstrap.prereq id"
+  description = "Returns the ID of the prereq script (if image are not used)"
   value       = "${module.bootstrap.prereq_id}"
 }
 
 # Deployed masters agent SSH user
 output "masters.admin_username" {
-  description = "masters.admin username"
+  description = "Masters node SSH User"
   value       = "${module.masters.admin_username}"
 }
 
 # Returns the ID of the prereq script
 output "masters.prereq_id" {
-  description = "masters.prereq id"
+  description = "Returns the ID of the prereq script (if image are not used)"
   value       = "${module.masters.prereq_id}"
 }
 
 # Deployed private agent SSH user
 output "private_agents.admin_username" {
-  description = "private agents.admin username"
+  description = "Private Agents node SSH User"
   value       = "${module.private_agents.admin_username}"
 }
 
 # Returns the ID of the prereq script
 output "private_agents.prereq_id" {
-  description = "private agents.prereq id"
+  description = "Returns the ID of the prereq script (if image are not used)"
   value       = "${module.private_agents.prereq_id}"
 }
 
 # Deployed public agent SSH user
 output "public_agents.admin_username" {
-  description = "public agents.admin username"
+  description = "Public Agents node SSH User"
   value       = "${module.public_agents.admin_username}"
 }
 
 # Returns the ID of the prereq script
 output "public_agents.prereq_id" {
-  description = "public agents.prereq id"
+  description = "Returns the ID of the prereq script for public agents (if image are not used)"
   value       = "${module.public_agents.prereq_id}"
 }
 
