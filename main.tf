@@ -9,7 +9,7 @@
  * ```hcl
  * module "dcos-infrastructure" {
  *   source  = "terraform-dcos/infrastructure/azurerm"
- *   version = "~> 0.1"
+ *   version = "~> 0.1.0"
  *
  *   infra_public_ssh_key_path = "~/.ssh/id_rsa.pub"
  *
