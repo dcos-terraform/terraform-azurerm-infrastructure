@@ -117,5 +117,3 @@ output "azurem_storage_key" {
   description = "Azure Storage Account Access Keys for External Exhibitor"
   value       = "${join(",", flatten(azurerm_storage_account.external_exhibitor.*.primary_access_key))}"
 }
-
-
