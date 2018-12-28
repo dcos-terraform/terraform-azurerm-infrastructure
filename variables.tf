@@ -245,3 +245,8 @@ variable "public_agents_additional_ports" {
   description = "List of additional ports allowed for public access on public agents (80 and 443 open by default)"
   default     = []
 }
+
+variable "azurem_storage_account_name" {
+  description = "The Azure Storage Account Name for External Exhibitor"
+  default     = ""
+}
