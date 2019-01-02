@@ -246,7 +246,7 @@ variable "public_agents_additional_ports" {
   default     = []
 }
 
-variable "azurem_storage_account_name" {
+variable "azurerm_storage_account_name" {
   description = "The Azure Storage Account Name for External Exhibitor"
   default     = ""
 }

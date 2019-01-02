@@ -73,8 +73,8 @@ module "network-security-group" {
 
 // If External Exhibitor is Specified, Create a Storage Account
 resource "azurerm_storage_account" "external_exhibitor" {
-  count                    = "${var.azurem_storage_account_name != "" ? 1 : 0}"
-  name                     = "${var.azurem_storage_account_name}"
+  count                    = "${var.azurerm_storage_account_name != "" ? 1 : 0}"
+  name                     = "${var.azurerm_storage_account_name}"
   resource_group_name      = "${azurerm_resource_group.rg.name}"
   location                 = "${var.location}"
   account_tier             = "Standard"
