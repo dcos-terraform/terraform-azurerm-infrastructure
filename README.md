@@ -24,6 +24,7 @@ module "dcos-infrastructure" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | admin_ips | List of CIDR admin IPs | list | - | yes |
+| azurerm_storage_account_name | The Azure Storage Account Name for External Exhibitor | string | `` | no |
 | bootstrap_admin_username | Bootstrap node SSH User | string | `` | no |
 | bootstrap_dcos_instance_os | Bootstrap node tested OSes image | string | `` | no |
 | bootstrap_disk_size | Bootstrap node disk size (gb) | string | `` | no |
@@ -69,6 +70,7 @@ module "dcos-infrastructure" {
 
 | Name | Description |
 |------|-------------|
+| azurerm_storage_key | Storage Key |
 | bootstrap.admin_username | Deployed bootstrap agent SSH user |
 | bootstrap.prereq_id | Returns the ID of the prereq script |
 | bootstrap.private_ip | Bootstrap private ip |
