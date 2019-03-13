@@ -94,6 +94,8 @@ module "loadbalancers" {
   cluster_name                   = "${var.cluster_name}"
   subnet_id                      = "${module.network.subnet_id}"
   public_agents_additional_rules = ["${data.null_data_source.lb_rules.*.outputs}"]
+  master_instance_nic_ids        = ["${module.masters.instance_nic_ids}"]
+  public_instance_nic_ids        = ["${module.public_agents.instance_nic_ids}"]
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
   tags                = "${var.tags}"
@@ -146,8 +148,8 @@ module "masters" {
   resource_group_name          = "${azurerm_resource_group.rg.name}"
   subnet_id                    = "${module.network.subnet_id}"
   network_security_group_id    = "${module.network-security-group.masters.nsg_id}"
-  public_backend_address_pool  = ["${module.loadbalancers.masters.backend_address_pool}"]
-  private_backend_address_pool = ["${module.loadbalancers.masters-internal.backend_address_pool}"]
+  public_backend_address_pool  = "${module.loadbalancers.masters.backend_address_pool}"
+  private_backend_address_pool = "${module.loadbalancers.masters-internal.backend_address_pool}"
 
   # Determine if we need to force a particular location
   dcos_version = "${var.dcos_version}"
@@ -202,7 +204,7 @@ module "public_agents" {
   resource_group_name         = "${azurerm_resource_group.rg.name}"
   subnet_id                   = "${module.network.subnet_id}"
   network_security_group_id   = "${module.network-security-group.public_agents.nsg_id}"
-  public_backend_address_pool = ["${module.loadbalancers.public-agents.backend_address_pool}"]
+  public_backend_address_pool = "${module.loadbalancers.public-agents.backend_address_pool}"
 
   # Determine if we need to force a particular location
   dcos_version = "${var.dcos_version}"
