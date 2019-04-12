@@ -23,6 +23,8 @@ module "dcos-infrastructure" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | admin\_ips | List of CIDR admin IPs | list | n/a | yes |
+| cluster\_name | Name of the DC/OS cluster | string | n/a | yes |
+| ssh\_public\_key\_file | Path to SSH public key. This is mandatory but can be set to an empty string if you want to use ssh_public_key with the key as string. | string | n/a | yes |
 | azurerm\_storage\_account\_name | The Azure Storage Account Name for External Exhibitor | string | `""` | no |
 | bootstrap\_admin\_username | Bootstrap node SSH User | string | `""` | no |
 | bootstrap\_dcos\_instance\_os | Bootstrap node tested OSes image | string | `""` | no |
@@ -30,7 +32,6 @@ module "dcos-infrastructure" {
 | bootstrap\_disk\_type | Bootstrap node disk type. | string | `"Standard_LRS"` | no |
 | bootstrap\_image | [BOOTSTRAP] Image to be used | map | `<map>` | no |
 | bootstrap\_vm\_size | [BOOTSTRAP] Azure virtual machine size | string | `"Standard_B2s"` | no |
-| cluster\_name | Name of the DC/OS cluster | string | n/a | yes |
 | dcos\_version | Specifies which DC/OS version instruction to use. Options: 1.12.3, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list. | string | `"1.11.4"` | no |
 | infra\_admin\_username | Global Infra SSH User | string | `"dcos_admin"` | no |
 | infra\_dcos\_instance\_os | Global Infra Tested OSes Image | string | `"centos_7.3"` | no |
@@ -61,7 +62,6 @@ module "dcos-infrastructure" {
 | public\_agents\_image | [PUBLIC AGENTS] Image to be used | map | `<map>` | no |
 | public\_agents\_vm\_size | [PUBLIC AGENTS] Azure virtual machine size | string | `"Standard_D4s_v3"` | no |
 | ssh\_public\_key | SSH public key in authorized keys format (e.g. 'ssh-rsa ..') to be used with the instances. Make sure you added this key to your ssh-agent. | string | `""` | no |
-| ssh\_public\_key\_file | Path to SSH public key. This is mandatory but can be set to an empty string if you want to use ssh_public_key with the key as string. | string | n/a | yes |
 | subnet\_range | Private IP space to be used in CIDR format | string | `"172.31.0.0/16"` | no |
 | tags | Add custom tags to all resources | map | `<map>` | no |
 
