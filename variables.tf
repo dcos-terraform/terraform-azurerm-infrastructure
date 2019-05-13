@@ -220,7 +220,7 @@ variable "num_public_agents" {
 
 # DCOS Version
 variable "dcos_version" {
-  description = "Specifies which DC/OS version instruction to use. Options: 1.9.0, 1.8.8, etc. See dcos_download_path or dcos_version tree for a full list."
+  description = "Specifies which DC/OS version instruction to use. Options: 1.12.3, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list."
   default     = "1.11.4"
 }
 
