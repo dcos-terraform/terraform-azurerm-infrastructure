@@ -1,21 +1,21 @@
-output "bootstrap.os_user" {
-  description = "Bootstrap instance OS default user"
-  value       = "${module.bootstrap.os_user}"
+output "bootstrap.admin_username" {
+  description = "Bootstrap node SSH User"
+  value       = "${module.bootstrap.admin_username}"
 }
 
-output "masters.os_user" {
-  description = "Master instances private OS default user"
-  value       = "${module.masters.os_user}"
+output "masters.admin_username" {
+  description = "Masters node SSH User"
+  value       = "${module.masters.admin_username}"
 }
 
-output "private_agents.os_user" {
-  description = "Private Agent instances private OS default user"
-  value       = "${module.private_agents.os_user}"
+output "private_agents.admin_username" {
+  description = "Private Agents node SSH User"
+  value       = "${module.private_agents.admin_username}"
 }
 
-output "public_agents.os_user" {
-  description = "Public Agent instances private OS default user"
-  value       = "${module.public_agents.os_user}"
+output "public_agents.admin_username" {
+  description = "Public Agents node SSH User"
+  value       = "${module.public_agents.admin_username}"
 }
 
 output "bootstrap.private_ip" {
