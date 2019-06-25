@@ -4,17 +4,17 @@ output "bootstrap.admin_username" {
 }
 
 output "masters.admin_username" {
-  description = "Master instances private OS default user"
+  description = "Master instances OS default user"
   value       = "${module.masters.admin_username}"
 }
 
 output "private_agents.admin_username" {
-  description = "Private Agent instances private OS default user"
+  description = "Private Agent instances OS default user"
   value       = "${module.private_agents.admin_username}"
 }
 
 output "public_agents.admin_username" {
-  description = "Public Agent instances private OS default user"
+  description = "Public Agent instances OS default user"
   value       = "${module.public_agents.admin_username}"
 }
 
