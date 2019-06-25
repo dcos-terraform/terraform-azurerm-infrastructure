@@ -88,7 +88,7 @@ output "vnet_name" {
   value       = "${module.network.vnet_name}"
 }
 
-output "rg_name" {
-  description = "Name of the Resource group"
+output "resource_group_name" {
+  description = "Name of the azure resource group"
   value       = "${azurerm_resource_group.rg.name}"
 }
