@@ -20,6 +20,11 @@
  * ```
  */
 
+locals {
+  default_subnets  = ["${var.subnet_range}"]
+  internal_subnets = "${distinct(compact(concat(var.accepted_internal_networks, local.default_subnets)))}"
+}
+
 data "null_data_source" "lb_rules" {
   count = "${length(var.public_agents_additional_ports)}"
 
@@ -32,7 +37,7 @@ provider "azurerm" {}
 
 # Create a resource group
 resource "azurerm_resource_group" "rg" {
-  name     = "dcos-${var.cluster_name}"
+  name     = "${var.name_prefix != "" ? "${var.name_prefix}-${var.cluster_name}" : var.cluster_name}"
   location = "${var.location}"
   tags     = "${var.tags}"
 }
@@ -45,8 +50,9 @@ module "network" {
     azurerm = "azurerm"
   }
 
-  subnet_range = "${var.subnet_range}"
+  subnet_range = "${local.internal_subnets}"
   cluster_name = "${var.cluster_name}"
+  name_prefix  = "${var.name_prefix}"
   location     = "${var.location}"
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
@@ -62,8 +68,9 @@ module "network-security-group" {
   }
 
   location                       = "${var.location}"
-  subnet_range                   = "${var.subnet_range}"
+  subnet_range                   = "${local.internal_subnets}"
   cluster_name                   = "${var.cluster_name}"
+  name_prefix                    = "${var.name_prefix}"
   admin_ips                      = ["${var.admin_ips}"]
   public_agents_additional_ports = ["${var.public_agents_additional_ports}"]
 
@@ -75,6 +82,7 @@ module "network-security-group" {
 resource "azurerm_storage_account" "external_exhibitor" {
   count                    = "${var.azurerm_storage_account_name != "" ? 1 : 0}"
   name                     = "${var.azurerm_storage_account_name}"
+  name_prefix              = "${var.name_prefix}"
   resource_group_name      = "${azurerm_resource_group.rg.name}"
   location                 = "${var.location}"
   account_tier             = "Standard"
@@ -92,6 +100,7 @@ module "loadbalancers" {
 
   location                             = "${var.location}"
   cluster_name                         = "${var.cluster_name}"
+  name_prefix                          = "${var.name_prefix}"
   subnet_id                            = "${module.network.subnet_id}"
   public_agents_additional_rules       = ["${data.null_data_source.lb_rules.*.outputs}"]
   masters_instance_nic_ids             = ["${module.masters.instance_nic_ids}"]
@@ -117,9 +126,10 @@ module "bootstrap" {
   disk_size                 = "${coalesce(var.bootstrap_disk_size, var.infra_disk_size)}"
   disk_type                 = "${coalesce(var.bootstrap_disk_type, var.infra_disk_type)}"
   vm_size                   = "${coalesce(var.bootstrap_vm_size, var.infra_vm_size)}"
-  name_prefix               = "${var.cluster_name}"
+  cluster_name              = "${var.cluster_name}"
+  name_prefix               = "${var.name_prefix}"
   ssh_public_key            = "${file(var.ssh_public_key_file)}"
-  admin_username            = "${coalesce(var.bootstrap_admin_username, var.infra_admin_username)}"
+  admin_username            = "${coalesce(var.bootstrap_ssh_user, var.infra_ssh_user)}"
   image                     = "${var.bootstrap_image}"
   dcos_instance_os          = "${coalesce(var.bootstrap_dcos_instance_os, var.infra_dcos_instance_os)}"
   resource_group_name       = "${azurerm_resource_group.rg.name}"
@@ -144,9 +154,10 @@ module "masters" {
   disk_size                 = "${coalesce(var.masters_disk_size, var.infra_disk_size)}"
   disk_type                 = "${coalesce(var.masters_disk_type, var.infra_disk_type)}"
   vm_size                   = "${coalesce(var.masters_vm_size, var.infra_vm_size)}"
-  name_prefix               = "${var.cluster_name}"
+  cluster_name              = "${var.cluster_name}"
+  name_prefix               = "${var.name_prefix}"
   ssh_public_key            = "${file(var.ssh_public_key_file)}"
-  admin_username            = "${coalesce(var.masters_admin_username, var.infra_admin_username)}"
+  admin_username            = "${coalesce(var.master_ssh_user, var.infra_ssh_user)}"
   image                     = "${var.masters_image}"
   dcos_instance_os          = "${coalesce(var.masters_dcos_instance_os, var.infra_dcos_instance_os)}"
   resource_group_name       = "${azurerm_resource_group.rg.name}"
@@ -171,9 +182,10 @@ module "private_agents" {
   disk_size                 = "${coalesce(var.private_agents_disk_size, var.infra_disk_size)}"
   disk_type                 = "${coalesce(var.private_agents_disk_type, var.infra_disk_type)}"
   vm_size                   = "${coalesce(var.private_agents_vm_size, var.infra_vm_size)}"
-  name_prefix               = "${var.cluster_name}"
+  cluster_name              = "${var.cluster_name}"
+  name_prefix               = "${var.name_prefix}"
   ssh_public_key            = "${file(var.ssh_public_key_file)}"
-  admin_username            = "${coalesce(var.private_agents_admin_username, var.infra_admin_username)}"
+  admin_username            = "${coalesce(var.private_agent_ssh_user, var.infra_ssh_user)}"
   image                     = "${var.private_agents_image}"
   dcos_instance_os          = "${coalesce(var.private_agents_dcos_instance_os, var.infra_dcos_instance_os)}"
   resource_group_name       = "${azurerm_resource_group.rg.name}"
@@ -198,9 +210,10 @@ module "public_agents" {
   disk_size                 = "${coalesce(var.public_agents_disk_size, var.infra_disk_size)}"
   disk_type                 = "${coalesce(var.public_agents_disk_type, var.infra_disk_type)}"
   vm_size                   = "${coalesce(var.public_agents_vm_size, var.infra_vm_size)}"
-  name_prefix               = "${var.cluster_name}"
+  cluster_name              = "${var.cluster_name}"
+  name_prefix               = "${var.name_prefix}"
   ssh_public_key            = "${file(var.ssh_public_key_file)}"
-  admin_username            = "${coalesce(var.public_agents_admin_username, var.infra_admin_username)}"
+  admin_username            = "${coalesce(var.public_agent_ssh_user, var.infra_ssh_user)}"
   image                     = "${var.public_agents_image}"
   dcos_instance_os          = "${coalesce(var.public_agents_dcos_instance_os, var.infra_dcos_instance_os)}"
   resource_group_name       = "${azurerm_resource_group.rg.name}"
