@@ -50,7 +50,7 @@ module "network" {
     azurerm = "azurerm"
   }
 
-  subnet_range = "${local.internal_subnets}"
+  subnet_range = "${var.subnet_range}"
   cluster_name = "${var.cluster_name}"
   name_prefix  = "${var.name_prefix}"
   location     = "${var.location}"
@@ -68,7 +68,7 @@ module "network-security-group" {
   }
 
   location                       = "${var.location}"
-  subnet_range                   = "${local.internal_subnets}"
+  subnet_range                   = "${var.subnet_range}"
   cluster_name                   = "${var.cluster_name}"
   name_prefix                    = "${var.name_prefix}"
   admin_ips                      = ["${var.admin_ips}"]
