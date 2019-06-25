@@ -72,19 +72,19 @@ module "dcos-infrastructure" {
 | Name | Description |
 |------|-------------|
 | azurerm\_storage\_key | Azure Storage Account Access Keys for External Exhibitor |
-| bootstrap.os\_user | Bootstrap instance OS default user |
+| bootstrap.admin\_username | Bootstrap instance OS default user |
 | bootstrap.private\_ip | Private IP of the bootstrap instance |
 | bootstrap.public\_ip | Public IP of the bootstrap instance |
 | lb.masters | lb address |
 | lb.masters-internal | lb address |
 | lb.public-agents | lb address |
-| masters.os\_user | Master instances private OS default user |
+| masters.admin\_username | Master instances private OS default user |
 | masters.private\_ips | Master instances private IPs |
 | masters.public\_ips | Master instances public IPs |
-| private\_agents.os\_user | Private Agent instances private OS default user |
+| private\_agents.admin\_username | Private Agent instances private OS default user |
 | private\_agents.private\_ips | Private Agent instances private IPs |
 | private\_agents.public\_ips | Private Agent public IPs |
-| public\_agents.os\_user | Public Agent instances private OS default user |
+| public\_agents.admin\_username | Public Agent instances private OS default user |
 | public\_agents.private\_ips | Public Agent instances private IPs |
 | public\_agents.public\_ips | Public Agent public IPs |
 | resource\_group\_name | Name of the azure resource group |
