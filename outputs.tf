@@ -1,20 +1,20 @@
 output "bootstrap.admin_username" {
-  description = "Bootstrap node SSH User"
+  description = "Bootstrap instance OS default user"
   value       = "${module.bootstrap.admin_username}"
 }
 
 output "masters.admin_username" {
-  description = "Masters node SSH User"
+  description = "Master instances private OS default user"
   value       = "${module.masters.admin_username}"
 }
 
 output "private_agents.admin_username" {
-  description = "Private Agents node SSH User"
+  description = "Private Agent instances private OS default user"
   value       = "${module.private_agents.admin_username}"
 }
 
 output "public_agents.admin_username" {
-  description = "Public Agents node SSH User"
+  description = "Public Agent instances private OS default user"
   value       = "${module.public_agents.admin_username}"
 }
 
