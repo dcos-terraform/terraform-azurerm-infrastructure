@@ -14,7 +14,7 @@ variable "bootstrap_disk_type" {
 
 variable "bootstrap_vm_size" {
   description = "[BOOTSTRAP] Azure virtual machine size"
-  default     = "Standard_B2s"
+  default     = "Standard_B4ms"
 }
 
 variable "bootstrap_image" {
