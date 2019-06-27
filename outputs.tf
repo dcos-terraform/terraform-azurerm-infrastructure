@@ -28,6 +28,11 @@ output "bootstrap.public_ip" {
   value       = "${module.bootstrap.public_ip}"
 }
 
+output "bootstrap.nsg_id" {
+  description = "Network security group id of the bootstrap"
+  value       = "${module.network-security-group.bootstrap.nsg_id}"
+}
+
 output "masters.public_ips" {
   description = "Master instances public IPs"
   value       = "${module.masters.public_ips}"
@@ -36,6 +41,11 @@ output "masters.public_ips" {
 output "masters.private_ips" {
   description = "Master instances private IPs"
   value       = "${module.masters.private_ips}"
+}
+
+output "masters.nsg_id" {
+  description = "Network security group id of the masters"
+  value       = "${module.network-security-group.masters.nsg_id}"
 }
 
 output "private_agents.public_ips" {
@@ -48,6 +58,11 @@ output "private_agents.private_ips" {
   value       = "${module.private_agents.private_ips}"
 }
 
+output "private_agents.nsg_id" {
+  description = "Network security group id of the private agents"
+  value       = "${module.network-security-group.private_agents.nsg_id}"
+}
+
 output "public_agents.public_ips" {
   description = "Public Agent public IPs"
   value       = "${module.public_agents.public_ips}"
@@ -56,6 +71,11 @@ output "public_agents.public_ips" {
 output "public_agents.private_ips" {
   description = "Public Agent instances private IPs"
   value       = "${module.public_agents.private_ips}"
+}
+
+output "public_agents.nsg_id" {
+  description = "Network security group id of the public agents"
+  value       = "${module.network-security-group.public_agents.nsg_id}"
 }
 
 output "lb.masters" {
@@ -91,4 +111,9 @@ output "vnet_name" {
 output "resource_group_name" {
   description = "Name of the azure resource group"
   value       = "${azurerm_resource_group.rg.name}"
+}
+
+output "subnet_id" {
+  description = "Subnet ID"
+  value       = "${module.network.subnet_id}"
 }
