@@ -137,8 +137,7 @@ module "bootstrap" {
   network_security_group_id = "${module.network-security-group.bootstrap.nsg_id}"
 
   # Determine if we need to force a particular location
-  dcos_version = "${var.dcos_version}"
-  tags         = "${var.tags}"
+  tags = "${var.tags}"
 }
 
 module "masters" {
@@ -165,8 +164,7 @@ module "masters" {
   network_security_group_id = "${module.network-security-group.masters.nsg_id}"
 
   # Determine if we need to force a particular location
-  dcos_version = "${var.dcos_version}"
-  tags         = "${var.tags}"
+  tags = "${var.tags}"
 }
 
 module "private_agents" {
@@ -193,8 +191,7 @@ module "private_agents" {
   network_security_group_id = "${module.network-security-group.private_agents.nsg_id}"
 
   # Determine if we need to force a particular location
-  dcos_version = "${var.dcos_version}"
-  tags         = "${var.tags}"
+  tags = "${var.tags}"
 }
 
 module "public_agents" {
@@ -221,6 +218,5 @@ module "public_agents" {
   network_security_group_id = "${module.network-security-group.public_agents.nsg_id}"
 
   # Determine if we need to force a particular location
-  dcos_version = "${var.dcos_version}"
-  tags         = "${var.tags}"
+  tags = "${var.tags}"
 }
