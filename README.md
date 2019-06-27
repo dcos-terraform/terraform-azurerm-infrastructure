@@ -33,7 +33,6 @@ module "dcos-infrastructure" {
 | bootstrap\_image | [BOOTSTRAP] Image to be used | map | `<map>` | no |
 | bootstrap\_ssh\_user | Bootstrap node SSH User | string | `""` | no |
 | bootstrap\_vm\_size | [BOOTSTRAP] Azure virtual machine size | string | `"Standard_B4ms"` | no |
-| dcos\_version | Specifies which DC/OS version instruction to use. Options: 1.13.1, 1.12.3, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list. | string | `"1.13.1"` | no |
 | infra\_dcos\_instance\_os | Global Infra Tested OSes Image | string | `"centos_7.6"` | no |
 | infra\_disk\_size | Global Infra Disk Size | string | `"128"` | no |
 | infra\_disk\_type | Global Infra Disk Type | string | `"Standard_LRS"` | no |
