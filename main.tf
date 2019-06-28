@@ -122,6 +122,7 @@ module "bootstrap" {
     azurerm = "azurerm"
   }
 
+  num_bootstrap                     = "${var.num_bootstrap}"
   location                          = "${var.location}"
   disk_size                         = "${coalesce(var.bootstrap_disk_size, var.infra_disk_size)}"
   disk_type                         = "${coalesce(var.bootstrap_disk_type, var.infra_disk_type)}"
