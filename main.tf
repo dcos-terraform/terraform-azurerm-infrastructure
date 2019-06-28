@@ -73,6 +73,10 @@ module "network-security-group" {
   name_prefix                    = "${var.name_prefix}"
   admin_ips                      = ["${var.admin_ips}"]
   public_agents_additional_ports = ["${var.public_agents_additional_ports}"]
+  num_bootstrap                  = "${var.num_bootstrap}"
+  num_masters                    = "${var.num_masters}"
+  num_private_agents             = "${var.num_private_agents}"
+  num_public_agents              = "${var.num_public_agents}"
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
   tags                = "${var.tags}"
