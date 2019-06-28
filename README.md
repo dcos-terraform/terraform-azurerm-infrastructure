@@ -47,6 +47,7 @@ module "dcos-infrastructure" {
 | masters\_image | [MASTERS] Image to be used | map | `<map>` | no |
 | masters\_vm\_size | [MASTERS] Azure virtual machine size | string | `"Standard_D4s_v3"` | no |
 | name\_prefix | Name Prefix | string | `""` | no |
+| num\_bootstrap | Specify the amount of bootstrap. You should have at most 1 | string | `"1"` | no |
 | num\_masters | Specify the amount of masters. For redundancy you should have at least 3 | string | `"3"` | no |
 | num\_private\_agents | Specify the amount of private agents. These agents will provide your main resources | string | `"1"` | no |
 | num\_public\_agents | Specify the amount of public agents. These agents will host marathon-lb and edgelb | string | `"1"` | no |
