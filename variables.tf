@@ -188,7 +188,7 @@ variable "tags" {
 
 variable "subnet_range" {
   description = "Private IP space to be used in CIDR format"
-  default     = "172.31.0.0/16"
+  default     = "172.12.0.0/16"
 }
 
 variable "admin_ips" {
