@@ -165,6 +165,11 @@ variable "bootstrap_dcos_instance_os" {
   default     = ""
 }
 
+variable "num_bootstrap" {
+  description = "Specify the amount of bootstrap. You should have at most 1"
+  default     = "1"
+}
+
 variable "num_masters" {
   description = "Specify the amount of masters. For redundancy you should have at least 3"
   default     = "3"
