@@ -25,7 +25,6 @@ module "dcos-infrastructure" {
 | admin\_ips | List of CIDR admin IPs | list | n/a | yes |
 | cluster\_name | Name of the DC/OS cluster | string | n/a | yes |
 | ssh\_public\_key\_file | Path to SSH public key. This is mandatory but can be set to an empty string if you want to use ssh_public_key with the key as string. | string | n/a | yes |
-| accepted\_internal\_networks | Subnet ranges for all internal networks | list | `<list>` | no |
 | avset\_platform\_fault\_domain\_count | Availability set platform fault domain count, differs from location to location | string | `"3"` | no |
 | azurerm\_storage\_account\_name | The Azure Storage Account Name for External Exhibitor | string | `""` | no |
 | bootstrap\_dcos\_instance\_os | Bootstrap node tested OSes image | string | `""` | no |
