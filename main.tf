@@ -21,8 +21,7 @@
  */
 
 locals {
-  default_subnets  = ["${var.subnet_range}"]
-  internal_subnets = "${distinct(compact(concat(var.accepted_internal_networks, local.default_subnets)))}"
+  default_subnets = ["${var.subnet_range}"]
 }
 
 data "null_data_source" "lb_rules" {
