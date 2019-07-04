@@ -1,10 +1,12 @@
 /**
- * [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-infrastructure/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-infrastructure/job/master/)
- * # DC/OS Azure Infrastucture
+ * [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/buildStatus/icon?job=dcos-terraform%2Fterraform-azurerm-infrastructure%2Fsupport%252F0.2.x)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-infrastructure/job/support%252F0.2.x/)
  *
+ * DC/OS Azure Infrastucture
+ * =========================
  * This module creates typical DS/OS infrastructure in Azure.
  *
- * ## EXAMPLE
+ * EXAMPLE
+ * -------
  *
  * ```hcl
  * module "dcos-infrastructure" {
@@ -101,17 +103,15 @@ module "loadbalancers" {
     azurerm = "azurerm"
   }
 
-  location                             = "${var.location}"
-  cluster_name                         = "${var.cluster_name}"
-  name_prefix                          = "${var.name_prefix}"
-  subnet_id                            = "${module.network.subnet_id}"
-  public_agents_additional_rules       = ["${data.null_data_source.lb_rules.*.outputs}"]
-  masters_instance_nic_ids             = ["${module.masters.instance_nic_ids}"]
-  public_agents_instance_nic_ids       = ["${module.public_agents.instance_nic_ids}"]
-  masters_ip_configuration_names       = ["${module.masters.ip_configuration_names}"]
-  public_agents_ip_configuration_names = ["${module.public_agents.ip_configuration_names}"]
-  num_masters                          = "${var.num_masters}"
-  num_public_agents                    = "${var.num_public_agents}"
+  location                       = "${var.location}"
+  cluster_name                   = "${var.cluster_name}"
+  name_prefix                    = "${var.name_prefix}"
+  subnet_id                      = "${module.network.subnet_id}"
+  public_agents_additional_rules = ["${data.null_data_source.lb_rules.*.outputs}"]
+  masters_instance_nic_ids       = ["${module.masters.instance_nic_ids}"]
+  public_agents_instance_nic_ids = ["${module.public_agents.instance_nic_ids}"]
+  num_masters                    = "${var.num_masters}"
+  num_public_agents              = "${var.num_public_agents}"
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
   tags                = "${var.tags}"
