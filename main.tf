@@ -110,6 +110,8 @@ module "loadbalancers" {
   public_agents_additional_rules = ["${data.null_data_source.lb_rules.*.outputs}"]
   masters_instance_nic_ids       = ["${module.masters.instance_nic_ids}"]
   public_agents_instance_nic_ids = ["${module.public_agents.instance_nic_ids}"]
+  masters_hostname_format        = "${module.masters.hostname_format}"
+  public_agents_hostname_format  = "${module.public_agents.hostname_format}"
   num_masters                    = "${var.num_masters}"
   num_public_agents              = "${var.num_public_agents}"
 
