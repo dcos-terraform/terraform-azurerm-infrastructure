@@ -1,0 +1,671 @@
+2019/09/02 14:10:58 [INFO] Terraform version: 0.11.14 mesosphere 
+2019/09/02 14:10:58 [INFO] Go runtime version: go1.12
+2019/09/02 14:10:58 [INFO] CLI args: []string{"/bin/terraform", "init", "-upgrade"}
+2019/09/02 14:10:58 [DEBUG] Attempting to open CLI config file: /root/.terraformrc
+2019/09/02 14:10:58 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019/09/02 14:10:58 [INFO] CLI command args: []string{"init", "-upgrade"}
+2019/09/02 14:10:58 [DEBUG] command: loading backend config file: /jenkins/workspace/erm-infrastructure_support_0.2.x
+2019/09/02 14:10:58 [INFO] no matching version for "dcos-terraform/vnet/azurerm"<~> 0.2.0>, no versions found
+2019/09/02 14:10:58 [DEBUG] matched "dcos-terraform/vnet/azurerm" version  for ~> 0.2.0
+2019/09/02 14:10:58 [DEBUG] Service discovery for registry.terraform.io at https://registry.terraform.io/.well-known/terraform.json
+2019/09/02 14:10:58 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/vnet/azurerm/versions"
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.4" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.12" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.11" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.5" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.9" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.2" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.6" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.7" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.1" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.0" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.3" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.8" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.14" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.10" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.16" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.15" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.13" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.17" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.18" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.19" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.1.1" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.2.0" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.1.0" for dcos-terraform/vnet/azurerm
+2019/09/02 14:10:58 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/vnet/azurerm/0.2.0/download"
+2019/09/02 14:10:58 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-vnet/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/3ae34db4034bcb2213a358a6f15586ef": true
+2019/09/02 14:10:58 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-vnet/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/3ae34db4034bcb2213a358a6f15586ef"
+2019/09/02 14:10:58 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/nsg/azurerm/versions"
+2019/09/02 14:10:58 [DEBUG] found available version "0.2.1" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.2.0" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.1.1" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.1.0" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.15" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.14" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.13" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.12" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.11" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.10" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.9" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.8" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.7" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.6" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.5" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.4" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.3" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.2" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.1" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] found available version "0.0.0" for dcos-terraform/nsg/azurerm
+2019/09/02 14:10:58 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/nsg/azurerm/0.2.1/download"
+2019/09/02 14:10:59 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-nsg/tarball/0.2.1?archive=tar.gz" in ".terraform/modules/c00d7cf18bb6517c426882f7f79d382f": true
+2019/09/02 14:10:59 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-nsg/tarball/0.2.1?archive=tar.gz" stored in ".terraform/modules/c00d7cf18bb6517c426882f7f79d382f"
+2019/09/02 14:10:59 [INFO] no matching version for "dcos-terraform/lb-dcos/azurerm"<~> 0.2.0>, no versions found
+2019/09/02 14:10:59 [DEBUG] matched "dcos-terraform/lb-dcos/azurerm" version  for ~> 0.2.0
+2019/09/02 14:10:59 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/lb-dcos/azurerm/versions"
+2019/09/02 14:10:59 [DEBUG] found available version "0.2.0" for dcos-terraform/lb-dcos/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.1.0" for dcos-terraform/lb-dcos/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.3" for dcos-terraform/lb-dcos/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.2" for dcos-terraform/lb-dcos/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.1" for dcos-terraform/lb-dcos/azurerm
+2019/09/02 14:10:59 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/lb-dcos/azurerm/0.2.0/download"
+2019/09/02 14:10:59 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb-dcos/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/70ff01ed7b5f5d16b7c5bc74674b6774": true
+2019/09/02 14:10:59 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb-dcos/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/70ff01ed7b5f5d16b7c5bc74674b6774"
+2019/09/02 14:10:59 [INFO] no matching version for "dcos-terraform/bootstrap/azurerm"<~> 0.2.0>, no versions found
+2019/09/02 14:10:59 [DEBUG] matched "dcos-terraform/bootstrap/azurerm" version  for ~> 0.2.0
+2019/09/02 14:10:59 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/bootstrap/azurerm/versions"
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.0" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.4" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.5" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.6" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.14" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.7" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.8" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.24" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.9" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.10" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.12" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.18" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.23" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.11" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.22" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.19" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.13" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.16" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.1" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.3" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.20" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.25" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.15" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.26" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.17" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.21" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.2.0" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.1.0" for dcos-terraform/bootstrap/azurerm
+2019/09/02 14:10:59 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/bootstrap/azurerm/0.2.0/download"
+2019/09/02 14:10:59 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-bootstrap/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/eb2bce6e7e620ac0c5f639d751e5d476": true
+2019/09/02 14:10:59 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-bootstrap/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/eb2bce6e7e620ac0c5f639d751e5d476"
+2019/09/02 14:10:59 [INFO] no matching version for "dcos-terraform/masters/azurerm"<~> 0.2.0>, no versions found
+2019/09/02 14:10:59 [DEBUG] matched "dcos-terraform/masters/azurerm" version  for ~> 0.2.0
+2019/09/02 14:10:59 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/masters/azurerm/versions"
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.10" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.18" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.11" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.9" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.4" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.6" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.5" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.17" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.16" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.25" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.12" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.14" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.26" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.22" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.27" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.28" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.21" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.29" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.30" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.19" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.23" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.3" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.24" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.1" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.20" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.13" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.15" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.8" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.2" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.7" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.0" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.2.0" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.1.0" for dcos-terraform/masters/azurerm
+2019/09/02 14:10:59 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/masters/azurerm/0.2.0/download"
+2019/09/02 14:10:59 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-masters/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/77132a62ef1ae59c26e2b66706e7f42b": true
+2019/09/02 14:10:59 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-masters/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/77132a62ef1ae59c26e2b66706e7f42b"
+2019/09/02 14:10:59 [INFO] no matching version for "dcos-terraform/private-agents/azurerm"<~> 0.2.0>, no versions found
+2019/09/02 14:10:59 [DEBUG] matched "dcos-terraform/private-agents/azurerm" version  for ~> 0.2.0
+2019/09/02 14:10:59 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/private-agents/azurerm/versions"
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.2" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.3" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.0" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.4" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.12" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.9" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.5" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.17" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.7" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.10" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.6" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.22" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.18" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.1" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.8" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.13" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.19" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.15" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.14" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.11" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.16" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.20" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.21" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.2.0" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.1.0" for dcos-terraform/private-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/private-agents/azurerm/0.2.0/download"
+2019/09/02 14:10:59 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-private-agents/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/7c63890156c694a2c6d03fec426f8957": true
+2019/09/02 14:10:59 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-private-agents/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/7c63890156c694a2c6d03fec426f8957"
+2019/09/02 14:10:59 [INFO] no matching version for "dcos-terraform/public-agents/azurerm"<~> 0.2.0>, no versions found
+2019/09/02 14:10:59 [DEBUG] matched "dcos-terraform/public-agents/azurerm" version  for ~> 0.2.0
+2019/09/02 14:10:59 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/public-agents/azurerm/versions"
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.17" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.18" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.2" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.0" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.3" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.5" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.4" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.15" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.13" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.7" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.16" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.8" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.9" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.23" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.28" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.11" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.12" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.24" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.25" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.20" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.21" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.22" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.26" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.27" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.19" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.14" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.6" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.10" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.1" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.2.0" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.1.0" for dcos-terraform/public-agents/azurerm
+2019/09/02 14:10:59 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/public-agents/azurerm/0.2.0/download"
+2019/09/02 14:10:59 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-public-agents/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/5b1917674d6bfc9a29c013b7ba27b8db": true
+2019/09/02 14:10:59 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-public-agents/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/5b1917674d6bfc9a29c013b7ba27b8db"
+2019/09/02 14:10:59 [INFO] no matching version for "dcos-terraform/instance/azurerm"<~> 0.2.0>, no versions found
+2019/09/02 14:10:59 [DEBUG] matched "dcos-terraform/instance/azurerm" version  for ~> 0.2.0
+2019/09/02 14:10:59 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/instance/azurerm/versions"
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.15" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.2" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.13" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.3" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.20" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.10" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.8" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.14" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.18" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.4" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.1" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.21" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.16" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.12" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.7" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.24" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.5" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.22" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.23" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.25" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.17" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.26" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.19" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.1.0" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.9" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.0" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.11" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.0.6" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] found available version "0.2.0" for dcos-terraform/instance/azurerm
+2019/09/02 14:10:59 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/instance/azurerm/0.2.0/download"
+2019/09/02 14:11:00 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-instance/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/08acb163f359374098e49c53821eac42": true
+2019/09/02 14:11:00 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-instance/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/08acb163f359374098e49c53821eac42"
+2019/09/02 14:11:00 [INFO] no matching version for "dcos-terraform/tested-oses/azurerm"<~> 0.2.0>, no versions found
+2019/09/02 14:11:00 [DEBUG] matched "dcos-terraform/tested-oses/azurerm" version  for ~> 0.2.0
+2019/09/02 14:11:00 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/tested-oses/azurerm/versions"
+2019/09/02 14:11:00 [DEBUG] found available version "0.2.0" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.1.4" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.1.3" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.1.2" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.1.1" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.1.0" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.1" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:00 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/tested-oses/azurerm/0.2.0/download"
+2019/09/02 14:11:00 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-tested-oses/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/894dca13319972ca03bbfa362910a930": true
+2019/09/02 14:11:00 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-tested-oses/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/894dca13319972ca03bbfa362910a930"
+2019/09/02 14:11:00 [INFO] no matching version for "dcos-terraform/lb-masters/azurerm"<~> 0.2.0>, no versions found
+2019/09/02 14:11:00 [DEBUG] matched "dcos-terraform/lb-masters/azurerm" version  for ~> 0.2.0
+2019/09/02 14:11:00 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/lb-masters/azurerm/versions"
+2019/09/02 14:11:00 [DEBUG] found available version "0.2.0" for dcos-terraform/lb-masters/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.1" for dcos-terraform/lb-masters/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.1.0" for dcos-terraform/lb-masters/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.4" for dcos-terraform/lb-masters/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.3" for dcos-terraform/lb-masters/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.2" for dcos-terraform/lb-masters/azurerm
+2019/09/02 14:11:00 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/lb-masters/azurerm/0.2.0/download"
+2019/09/02 14:11:00 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb-masters/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/69615d774f37a5916afea8792d51b83a": true
+2019/09/02 14:11:00 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb-masters/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/69615d774f37a5916afea8792d51b83a"
+2019/09/02 14:11:00 [INFO] no matching version for "dcos-terraform/lb-masters-internal/azurerm"<~> 0.2.0>, no versions found
+2019/09/02 14:11:00 [DEBUG] matched "dcos-terraform/lb-masters-internal/azurerm" version  for ~> 0.2.0
+2019/09/02 14:11:00 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/lb-masters-internal/azurerm/versions"
+2019/09/02 14:11:00 [DEBUG] found available version "0.2.0" for dcos-terraform/lb-masters-internal/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.1" for dcos-terraform/lb-masters-internal/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.2" for dcos-terraform/lb-masters-internal/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.1.0" for dcos-terraform/lb-masters-internal/azurerm
+2019/09/02 14:11:00 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/lb-masters-internal/azurerm/0.2.0/download"
+2019/09/02 14:11:00 [DEBUG] fetching "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb-masters-internal/tarball/0.2.0?archive=tar.gz" with key "1.loadbalancers#0.2.0;dcos-terraform/lb-dcos/azurerm|masters-internal;dcos-terraform/lb-masters-internal/azurerm.0.2.0"
+2019/09/02 14:11:00 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb-masters-internal/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/5d8b1006575ed52efa289633402b7179": true
+2019/09/02 14:11:00 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb-masters-internal/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/5d8b1006575ed52efa289633402b7179"
+2019/09/02 14:11:00 [INFO] no matching version for "dcos-terraform/lb-public-agents/azurerm"<~> 0.2.0>, no versions found
+2019/09/02 14:11:00 [DEBUG] matched "dcos-terraform/lb-public-agents/azurerm" version  for ~> 0.2.0
+2019/09/02 14:11:00 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/lb-public-agents/azurerm/versions"
+2019/09/02 14:11:00 [DEBUG] found available version "0.2.0" for dcos-terraform/lb-public-agents/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.1.0" for dcos-terraform/lb-public-agents/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.2" for dcos-terraform/lb-public-agents/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.1" for dcos-terraform/lb-public-agents/azurerm
+2019/09/02 14:11:00 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/lb-public-agents/azurerm/0.2.0/download"
+2019/09/02 14:11:00 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb-public-agents/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/abc803bfa8b5a4ce3f151911119f4bec": true
+2019/09/02 14:11:00 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb-public-agents/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/abc803bfa8b5a4ce3f151911119f4bec"
+2019/09/02 14:11:00 [INFO] no matching version for "dcos-terraform/lb/azurerm"<~> 0.2.0>, no versions found
+2019/09/02 14:11:00 [DEBUG] matched "dcos-terraform/lb/azurerm" version  for ~> 0.2.0
+2019/09/02 14:11:00 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/lb/azurerm/versions"
+2019/09/02 14:11:00 [DEBUG] found available version "0.2.0" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.1.0" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.3" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.5" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.8" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.11" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.18" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.17" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.16" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.15" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.14" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.13" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.12" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.9" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.10" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.7" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.6" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.4" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.2" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.1" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] found available version "0.0.0" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:00 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/lb/azurerm/0.2.0/download"
+2019/09/02 14:11:01 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/6ebb32accd577f5e32a0b12158cd7568": true
+2019/09/02 14:11:01 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/6ebb32accd577f5e32a0b12158cd7568"
+2019/09/02 14:11:01 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] matched "dcos-terraform/lb/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:01 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/lb/azurerm/versions"
+2019/09/02 14:11:01 [DEBUG] found available version "0.2.0" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.1.0" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.3" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.5" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.8" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.11" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.18" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.17" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.16" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.15" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.14" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.13" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.12" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.9" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.10" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.7" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.6" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.4" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.2" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.1" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.0" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/lb/azurerm/0.2.0/download"
+2019/09/02 14:11:01 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/b7d82f8aa3d536f0f096dd84f707b0cd": true
+2019/09/02 14:11:01 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/b7d82f8aa3d536f0f096dd84f707b0cd"
+2019/09/02 14:11:01 [DEBUG] found available version "0.2.0" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.1.0" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.3" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.5" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.8" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.11" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.18" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.17" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.16" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.15" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.14" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.13" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.12" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.9" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.10" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.7" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.6" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.4" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.2" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.1" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] found available version "0.0.0" for dcos-terraform/lb/azurerm
+2019/09/02 14:11:01 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/lb/azurerm/0.2.0/download"
+2019/09/02 14:11:02 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/688a8709817189a9299975cf75e16c9c": true
+2019/09/02 14:11:02 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-lb/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/688a8709817189a9299975cf75e16c9c"
+2019/09/02 14:11:02 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] matched "dcos-terraform/instance/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:02 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/instance/azurerm/versions"
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.15" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.2" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.13" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.3" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.20" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.10" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.8" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.14" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.18" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.4" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.1" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.21" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.16" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.12" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.7" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.24" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.5" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.22" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.23" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.25" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.17" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.26" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.19" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.0" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.9" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.0" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.11" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.6" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.2.0" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/instance/azurerm/0.2.0/download"
+2019/09/02 14:11:02 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-instance/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/8e51353d27e3413f91213c63b03fbbea": true
+2019/09/02 14:11:02 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-instance/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/8e51353d27e3413f91213c63b03fbbea"
+2019/09/02 14:11:02 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] matched "dcos-terraform/tested-oses/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:02 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/tested-oses/azurerm/versions"
+2019/09/02 14:11:02 [DEBUG] found available version "0.2.0" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.4" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.3" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.2" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.1" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.0" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.1" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/tested-oses/azurerm/0.2.0/download"
+2019/09/02 14:11:02 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-tested-oses/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/cacc08f23f62adc9f76e4e6ad7c64cf0": true
+2019/09/02 14:11:02 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-tested-oses/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/cacc08f23f62adc9f76e4e6ad7c64cf0"
+2019/09/02 14:11:02 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] matched "dcos-terraform/instance/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:02 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/instance/azurerm/versions"
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.15" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.2" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.13" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.3" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.20" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.10" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.8" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.14" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.18" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.4" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.1" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.21" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.16" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.12" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.7" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.24" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.5" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.22" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.23" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.25" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.17" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.26" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.19" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.0" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.9" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.0" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.11" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.6" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.2.0" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/instance/azurerm/0.2.0/download"
+2019/09/02 14:11:02 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-instance/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/663d5de3ea754957f7d6443fdded0bf1": true
+2019/09/02 14:11:02 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-instance/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/663d5de3ea754957f7d6443fdded0bf1"
+2019/09/02 14:11:02 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] matched "dcos-terraform/tested-oses/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:02 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/tested-oses/azurerm/versions"
+2019/09/02 14:11:02 [DEBUG] found available version "0.2.0" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.4" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.3" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.2" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.1" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.0" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.1" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/tested-oses/azurerm/0.2.0/download"
+2019/09/02 14:11:02 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-tested-oses/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/51cd2ce12d65b3ab583fe0c79280c274": true
+2019/09/02 14:11:02 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-tested-oses/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/51cd2ce12d65b3ab583fe0c79280c274"
+2019/09/02 14:11:02 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] matched "dcos-terraform/instance/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:02 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/instance/azurerm/versions"
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.15" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.2" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.13" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.3" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.20" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.10" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.8" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.14" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.18" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.4" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.1" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.21" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.16" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.12" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.7" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.24" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.5" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.22" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.23" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.25" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.17" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.26" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.19" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.0" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.9" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.0" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.11" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.6" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.2.0" for dcos-terraform/instance/azurerm
+2019/09/02 14:11:02 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/instance/azurerm/0.2.0/download"
+2019/09/02 14:11:02 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-instance/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/31c104e9a595216b340de6c4dd0b0f3c": true
+2019/09/02 14:11:02 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-instance/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/31c104e9a595216b340de6c4dd0b0f3c"
+2019/09/02 14:11:02 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] matched "dcos-terraform/tested-oses/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:02 [DEBUG] fetching module versions from "https://registry.terraform.io/v1/modules/dcos-terraform/tested-oses/azurerm/versions"
+2019/09/02 14:11:02 [DEBUG] found available version "0.2.0" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.4" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.3" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.2" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.1" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.1.0" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] found available version "0.0.1" for dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:02 [DEBUG] looking up module location from "https://registry.terraform.io/v1/modules/dcos-terraform/tested-oses/azurerm/0.2.0/download"
+2019/09/02 14:11:03 [DEBUG] found "https://api.github.com/repos/dcos-terraform/terraform-azurerm-tested-oses/tarball/0.2.0?archive=tar.gz" in ".terraform/modules/5dacee9b87ee138afa33ea0401c57777": true
+2019/09/02 14:11:03 [TRACE] "https://api.github.com/repos/dcos-terraform/terraform-azurerm-tested-oses/tarball/0.2.0?archive=tar.gz" stored in ".terraform/modules/5dacee9b87ee138afa33ea0401c57777"
+2019/09/02 14:11:03 [INFO] command: empty backend config, returning nil
+2019/09/02 14:11:03 [DEBUG] command: no data state file found for backend config
+2019/09/02 14:11:03 [DEBUG] New state was assigned lineage "fff5a327-4061-161c-be42-6ab351bd7ab8"
+2019/09/02 14:11:03 [INFO] command: backend initialized: <nil>
+2019/09/02 14:11:03 [DEBUG] checking for provider in "."
+2019/09/02 14:11:03 [DEBUG] checking for provider in "/bin"
+2019/09/02 14:11:03 [DEBUG] checking for provisioner in "."
+2019/09/02 14:11:03 [DEBUG] checking for provisioner in "/bin"
+2019/09/02 14:11:03 [INFO] Failed to read plugin lock file .terraform/plugins/linux_amd64/lock.json: open .terraform/plugins/linux_amd64/lock.json: no such file or directory
+2019/09/02 14:11:03 [INFO] command: backend <nil> is not enhanced, wrapping in local
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/vnet/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/vnet/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.1" for module dcos-terraform/nsg/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/nsg/azurerm" version 0.2.1 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb-dcos/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/lb-dcos/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/bootstrap/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/bootstrap/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/masters/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/masters/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/private-agents/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/private-agents/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/public-agents/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/public-agents/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb-masters/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/lb-masters/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb-masters-internal/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/lb-masters-internal/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb-public-agents/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/lb-public-agents/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/lb/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/lb/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/lb/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/lb/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/instance/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/tested-oses/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/instance/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/tested-oses/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/instance/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/tested-oses/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/instance/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/instance/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] found local version "0.2.0" for module dcos-terraform/tested-oses/azurerm
+2019/09/02 14:11:03 [DEBUG] matched "dcos-terraform/tested-oses/azurerm" version 0.2.0 for ~> 0.2.0
+2019/09/02 14:11:03 [DEBUG] checking for provider in "."
+2019/09/02 14:11:03 [DEBUG] checking for provider in "/bin"
+2019/09/02 14:11:03 [DEBUG] plugin requirements: "azurerm"=""
+2019/09/02 14:11:03 [DEBUG] plugin requirements: "null"=""
+2019/09/02 14:11:03 [DEBUG] fetching provider info for azurerm version 1.33.1
+2019/09/02 14:11:03 [DEBUG] getting provider "azurerm" version "1.33.1"
+2019/09/02 14:11:03 [DEBUG] plugin cache is disabled, so downloading azurerm 1.33.1 from https://releases.hashicorp.com/terraform-provider-azurerm/1.33.1/terraform-provider-azurerm_1.33.1_linux_amd64.zip?checksum=sha256:7b5597a236e36c8d2ad8f082c78ed5acc4c553c73d85ecfb90d3134d763b3e95
+2019/09/02 14:11:04 [DEBUG] looking for the azurerm 1.33.1 plugin we just installed
+2019/09/02 14:11:04 [DEBUG] checking for provider in ".terraform/plugins/linux_amd64"
+2019/09/02 14:11:04 [DEBUG] found provider "terraform-provider-azurerm_v1.33.1_x4"
+2019/09/02 14:11:04 [DEBUG] all plugins found discovery.PluginMetaSet{discovery.PluginMeta{Name:"azurerm", Version:"1.33.1", Path:"/jenkins/workspace/erm-infrastructure_support_0.2.x/.terraform/plugins/linux_amd64/terraform-provider-azurerm_v1.33.1_x4"}:struct {}{}}
+2019/09/02 14:11:04 [DEBUG] filtered plugins discovery.PluginMetaSet{discovery.PluginMeta{Name:"azurerm", Version:"1.33.1", Path:"/jenkins/workspace/erm-infrastructure_support_0.2.x/.terraform/plugins/linux_amd64/terraform-provider-azurerm_v1.33.1_x4"}:struct {}{}}
+2019/09/02 14:11:04 [DEBUG] fetching provider info for null version 2.1.2
+2019/09/02 14:11:04 [DEBUG] getting provider "null" version "2.1.2"
+2019/09/02 14:11:04 [DEBUG] plugin cache is disabled, so downloading null 2.1.2 from https://releases.hashicorp.com/terraform-provider-null/2.1.2/terraform-provider-null_2.1.2_linux_amd64.zip?checksum=sha256:16fc2d9b10cf9e5123bf956e7032c338cc93a03be1ca2e9f3d3b7014c0e866c7
+2019/09/02 14:11:05 [DEBUG] looking for the null 2.1.2 plugin we just installed
+2019/09/02 14:11:05 [DEBUG] checking for provider in ".terraform/plugins/linux_amd64"
+2019/09/02 14:11:05 [DEBUG] found provider "terraform-provider-azurerm_v1.33.1_x4"
+2019/09/02 14:11:05 [DEBUG] found provider "terraform-provider-null_v2.1.2_x4"
+2019/09/02 14:11:05 [DEBUG] all plugins found discovery.PluginMetaSet{discovery.PluginMeta{Name:"azurerm", Version:"1.33.1", Path:"/jenkins/workspace/erm-infrastructure_support_0.2.x/.terraform/plugins/linux_amd64/terraform-provider-azurerm_v1.33.1_x4"}:struct {}{}, discovery.PluginMeta{Name:"null", Version:"2.1.2", Path:"/jenkins/workspace/erm-infrastructure_support_0.2.x/.terraform/plugins/linux_amd64/terraform-provider-null_v2.1.2_x4"}:struct {}{}}
+2019/09/02 14:11:05 [DEBUG] filtered plugins discovery.PluginMetaSet{discovery.PluginMeta{Name:"null", Version:"2.1.2", Path:"/jenkins/workspace/erm-infrastructure_support_0.2.x/.terraform/plugins/linux_amd64/terraform-provider-null_v2.1.2_x4"}:struct {}{}}
+2019/09/02 14:11:05 [DEBUG] checking for provider in "."
+2019/09/02 14:11:05 [DEBUG] checking for provider in "/bin"
+2019/09/02 14:11:05 [DEBUG] checking for provider in ".terraform/plugins/linux_amd64"
+2019/09/02 14:11:05 [DEBUG] found provider "terraform-provider-azurerm_v1.33.1_x4"
+2019/09/02 14:11:05 [DEBUG] found provider "terraform-provider-null_v2.1.2_x4"
+2019/09/02 14:11:05 [DEBUG] found valid plugin: "null", "2.1.2", "/jenkins/workspace/erm-infrastructure_support_0.2.x/.terraform/plugins/linux_amd64/terraform-provider-null_v2.1.2_x4"
+2019/09/02 14:11:05 [DEBUG] found valid plugin: "azurerm", "1.33.1", "/jenkins/workspace/erm-infrastructure_support_0.2.x/.terraform/plugins/linux_amd64/terraform-provider-azurerm_v1.33.1_x4"
+2019/09/02 14:11:06 [DEBUG] checking for provider in ".terraform/plugins/linux_amd64"
+2019/09/02 14:11:06 [DEBUG] found provider "terraform-provider-azurerm_v1.33.1_x4"
+2019/09/02 14:11:06 [DEBUG] found provider "terraform-provider-null_v2.1.2_x4"
+2019/09/02 14:11:06 [DEBUG] plugin: waiting for all plugin processes to complete...
+2019/09/02 14:11:06 [INFO] Terraform version: 0.11.14 mesosphere 
+2019/09/02 14:11:06 [INFO] Go runtime version: go1.12
+2019/09/02 14:11:06 [INFO] CLI args: []string{"/bin/terraform", "validate", "-check-variables=false"}
+2019/09/02 14:11:06 [DEBUG] Attempting to open CLI config file: /root/.terraformrc
+2019/09/02 14:11:06 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019/09/02 14:11:06 [INFO] CLI command args: []string{"validate", "-check-variables=false"}
+2019/09/02 14:11:06 [DEBUG] plugin: waiting for all plugin processes to complete...
+2019/09/02 14:12:10 [INFO] Terraform version: 0.11.14 mesosphere 
+2019/09/02 14:12:10 [INFO] Go runtime version: go1.12
+2019/09/02 14:12:10 [INFO] CLI args: []string{"/bin/terraform", "fmt", "main.tf"}
+2019/09/02 14:12:10 [DEBUG] Attempting to open CLI config file: /root/.terraformrc
+2019/09/02 14:12:10 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019/09/02 14:12:10 [INFO] CLI command args: []string{"fmt", "main.tf"}
+2019/09/02 14:12:10 [DEBUG] plugin: waiting for all plugin processes to complete...
+2019/09/02 14:12:10 [INFO] Terraform version: 0.11.14 mesosphere 
+2019/09/02 14:12:10 [INFO] Go runtime version: go1.12
+2019/09/02 14:12:10 [INFO] CLI args: []string{"/bin/terraform", "fmt", "meta.tf"}
+2019/09/02 14:12:10 [DEBUG] Attempting to open CLI config file: /root/.terraformrc
+2019/09/02 14:12:10 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019/09/02 14:12:10 [INFO] CLI command args: []string{"fmt", "meta.tf"}
+2019/09/02 14:12:10 [DEBUG] plugin: waiting for all plugin processes to complete...
+2019/09/02 14:12:10 [INFO] Terraform version: 0.11.14 mesosphere 
+2019/09/02 14:12:10 [INFO] Go runtime version: go1.12
+2019/09/02 14:12:10 [INFO] CLI args: []string{"/bin/terraform", "fmt", "outputs.tf"}
+2019/09/02 14:12:10 [DEBUG] Attempting to open CLI config file: /root/.terraformrc
+2019/09/02 14:12:10 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019/09/02 14:12:10 [INFO] CLI command args: []string{"fmt", "outputs.tf"}
+2019/09/02 14:12:10 [DEBUG] plugin: waiting for all plugin processes to complete...
+2019/09/02 14:12:10 [INFO] Terraform version: 0.11.14 mesosphere 
+2019/09/02 14:12:10 [INFO] Go runtime version: go1.12
+2019/09/02 14:12:10 [INFO] CLI args: []string{"/bin/terraform", "fmt", "variables.tf"}
+2019/09/02 14:12:10 [DEBUG] Attempting to open CLI config file: /root/.terraformrc
+2019/09/02 14:12:10 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019/09/02 14:12:10 [INFO] CLI command args: []string{"fmt", "variables.tf"}
+2019/09/02 14:12:10 [DEBUG] plugin: waiting for all plugin processes to complete...
