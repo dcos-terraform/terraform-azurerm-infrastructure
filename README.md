@@ -34,7 +34,7 @@ module "dcos-infrastructure" {
 | bootstrap\_disk\_type | Bootstrap node disk type. | string | `"Standard_LRS"` | no |
 | bootstrap\_image | [BOOTSTRAP] Image to be used | map | `<map>` | no |
 | bootstrap\_vm\_size | [BOOTSTRAP] Azure virtual machine size | string | `"Standard_B2s"` | no |
-| dcos\_version | Specifies which DC/OS version instruction to use. Options: 1.13.1, 1.12.3, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list. | string | `"1.11.4"` | no |
+| dcos\_version | Specifies which DC/OS version instruction to use. Options: 1.13.3, 1.12.4, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list. | string | `"1.11.4"` | no |
 | infra\_admin\_username | Global Infra SSH User | string | `"dcos_admin"` | no |
 | infra\_dcos\_instance\_os | Global Infra Tested OSes Image | string | `"centos_7.3"` | no |
 | infra\_disk\_size | Global Infra Disk Size | string | `"128"` | no |
@@ -72,22 +72,22 @@ module "dcos-infrastructure" {
 | Name | Description |
 |------|-------------|
 | azurerm\_storage\_key | Azure Storage Account Access Keys for External Exhibitor |
-| bootstrap.admin\_username | Bootstrap node SSH User |
+| bootstrap.admin\_username | Bootstrap instance OS default user |
 | bootstrap.prereq\_id | Returns the ID of the prereq script (if image are not used) |
 | bootstrap.private\_ip | Private IP of the bootstrap instance |
 | bootstrap.public\_ip | Public IP of the bootstrap instance |
 | lb.masters | lb address |
 | lb.masters-internal | lb address |
 | lb.public-agents | lb address |
-| masters.admin\_username | Masters node SSH User |
+| masters.admin\_username | Master instances OS default user |
 | masters.prereq\_id | Returns the ID of the prereq script for masters (if user_data or ami are not used) |
 | masters.private\_ips | Master instances private IPs |
 | masters.public\_ips | Master instances public IPs |
-| private\_agents.admin\_username | Private Agents node SSH User |
+| private\_agents.admin\_username | Private Agent instances OS default user |
 | private\_agents.prereq\_id | Returns the ID of the prereq script for private agents (if image are not used) |
 | private\_agents.private\_ips | Private Agent instances private IPs |
 | private\_agents.public\_ips | Private Agent public IPs |
-| public\_agents.admin\_username | Public Agents node SSH User |
+| public\_agents.admin\_username | Public Agent instances OS default user |
 | public\_agents.prereq\_id | Returns the ID of the prereq script for public agents (if image are not used) |
 | public\_agents.private\_ips | Public Agent instances private IPs |
 | public\_agents.public\_ips | Public Agent public IPs |

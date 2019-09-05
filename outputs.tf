@@ -1,6 +1,6 @@
 # Deployed bootstrap agent SSH user
 output "bootstrap.admin_username" {
-  description = "Bootstrap node SSH User"
+  description = "Bootstrap instance OS default user"
   value       = "${module.bootstrap.admin_username}"
 }
 
@@ -12,7 +12,7 @@ output "bootstrap.prereq_id" {
 
 # Deployed masters agent SSH user
 output "masters.admin_username" {
-  description = "Masters node SSH User"
+  description = "Master instances OS default user"
   value       = "${module.masters.admin_username}"
 }
 
@@ -24,7 +24,7 @@ output "masters.prereq_id" {
 
 # Deployed private agent SSH user
 output "private_agents.admin_username" {
-  description = "Private Agents node SSH User"
+  description = "Private Agent instances OS default user"
   value       = "${module.private_agents.admin_username}"
 }
 
@@ -36,7 +36,7 @@ output "private_agents.prereq_id" {
 
 # Deployed public agent SSH user
 output "public_agents.admin_username" {
-  description = "Public Agents node SSH User"
+  description = "Public Agent instances OS default user"
   value       = "${module.public_agents.admin_username}"
 }
 
