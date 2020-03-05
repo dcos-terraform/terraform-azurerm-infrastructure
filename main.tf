@@ -78,6 +78,7 @@ module "network-security-group" {
   num_masters                    = "${var.num_masters}"
   num_private_agents             = "${var.num_private_agents}"
   num_public_agents              = "${var.num_public_agents}"
+  adminrouter_grpc_proxy_port    = "${var.adminrouter_grpc_proxy_port}"
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
   tags                = "${var.tags}"
@@ -112,6 +113,7 @@ module "loadbalancers" {
   public_agents_instance_nic_ids = ["${module.public_agents.instance_nic_ids}"]
   num_masters                    = "${var.num_masters}"
   num_public_agents              = "${var.num_public_agents}"
+  adminrouter_grpc_proxy_port    = "${var.adminrouter_grpc_proxy_port}"
 
   resource_group_name = "${azurerm_resource_group.rg.name}"
   tags                = "${var.tags}"

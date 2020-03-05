@@ -220,3 +220,8 @@ variable "avset_platform_fault_domain_count" {
   description = "Availability set platform fault domain count, differs from location to location"
   default     = 3
 }
+
+variable "adminrouter_grpc_proxy_port" {
+  description = ""
+  default     = 12379
+}
