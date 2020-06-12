@@ -11,7 +11,7 @@
  * ```hcl
  * module "dcos-infrastructure" {
  *   source  = "terraform-dcos/infrastructure/azurerm"
- *   version = "~> 0.2.0"
+ *   version = "~> 0.3.0"
  *
  *   infra_public_ssh_key_path = "~/.ssh/id_rsa.pub"
  *
@@ -47,7 +47,7 @@ resource "azurerm_resource_group" "rg" {
 
 module "network" {
   source  = "dcos-terraform/vnet/azurerm"
-  version = "~> 0.2.0"
+  version = "~> 0.3.0"
 
   providers = {
     azurerm = azurerm
@@ -64,7 +64,7 @@ module "network" {
 
 module "network-security-group" {
   source  = "dcos-terraform/nsg/azurerm"
-  version = "~> 0.2.0"
+  version = "~> 0.3.0"
 
   providers = {
     azurerm = azurerm
@@ -100,7 +100,7 @@ resource "azurerm_storage_account" "external_exhibitor" {
 
 module "loadbalancers" {
   source  = "dcos-terraform/lb-dcos/azurerm"
-  version = "~> 0.2.0"
+  version = "~> 0.3.0"
 
   providers = {
     azurerm = azurerm
@@ -122,7 +122,7 @@ module "loadbalancers" {
 
 module "bootstrap" {
   source  = "dcos-terraform/bootstrap/azurerm"
-  version = "~> 0.2.0"
+  version = "~> 0.3.0"
 
   providers = {
     azurerm = azurerm
@@ -150,7 +150,7 @@ module "bootstrap" {
 
 module "masters" {
   source  = "dcos-terraform/masters/azurerm"
-  version = "~> 0.2.0"
+  version = "~> 0.3.0"
 
   providers = {
     azurerm = azurerm
@@ -178,7 +178,7 @@ module "masters" {
 
 module "private_agents" {
   source  = "dcos-terraform/private-agents/azurerm"
-  version = "~> 0.2.0"
+  version = "~> 0.3.0"
 
   providers = {
     azurerm = azurerm
@@ -209,7 +209,7 @@ module "private_agents" {
 
 module "public_agents" {
   source  = "dcos-terraform/public-agents/azurerm"
-  version = "~> 0.2.0"
+  version = "~> 0.3.0"
 
   providers = {
     azurerm = azurerm
