@@ -130,15 +130,15 @@ module "bootstrap" {
 
   num_bootstrap                     = var.num_bootstrap
   location                          = var.location
-  disk_size                         = coalesce(var.bootstrap_disk_size, var.infra_disk_size)
-  disk_type                         = coalesce(var.bootstrap_disk_type, var.infra_disk_type)
-  vm_size                           = coalesce(var.bootstrap_vm_size, var.infra_vm_size)
+  disk_size                         = try(coalesce(var.bootstrap_disk_size, var.infra_disk_size), null)
+  disk_type                         = try(coalesce(var.bootstrap_disk_type, var.infra_disk_type), null)
+  vm_size                           = try(coalesce(var.bootstrap_vm_size, var.infra_vm_size), null)
   cluster_name                      = var.cluster_name
   name_prefix                       = var.name_prefix
   public_ssh_key                    = var.ssh_public_key_file
-  admin_username                    = coalesce(var.bootstrap_ssh_user, var.infra_ssh_user)
+  admin_username                    = try(coalesce(var.bootstrap_ssh_user, var.infra_ssh_user), null)
   image                             = var.bootstrap_image
-  dcos_instance_os                  = coalesce(var.bootstrap_dcos_instance_os, var.infra_dcos_instance_os)
+  dcos_instance_os                  = try(coalesce(var.bootstrap_dcos_instance_os, var.infra_dcos_instance_os), null)
   resource_group_name               = azurerm_resource_group.rg.name
   subnet_id                         = module.network.subnet_id
   network_security_group_id         = module.network-security-group.bootstrap_nsg_id
@@ -158,15 +158,15 @@ module "masters" {
 
   num_masters                       = var.num_masters
   location                          = var.location
-  disk_size                         = coalesce(var.masters_disk_size, var.infra_disk_size)
-  disk_type                         = coalesce(var.masters_disk_type, var.infra_disk_type)
-  vm_size                           = coalesce(var.masters_vm_size, var.infra_vm_size)
+  disk_size                         = try(coalesce(var.masters_disk_size, var.infra_disk_size), null)
+  disk_type                         = try(coalesce(var.masters_disk_type, var.infra_disk_type), null)
+  vm_size                           = try(coalesce(var.masters_vm_size, var.infra_vm_size), null)
   cluster_name                      = var.cluster_name
   name_prefix                       = var.name_prefix
   public_ssh_key                    = var.ssh_public_key_file
-  admin_username                    = coalesce(var.master_ssh_user, var.infra_ssh_user)
+  admin_username                    = try(coalesce(var.master_ssh_user, var.infra_ssh_user), null)
   image                             = var.masters_image
-  dcos_instance_os                  = coalesce(var.masters_dcos_instance_os, var.infra_dcos_instance_os)
+  dcos_instance_os                  = try(coalesce(var.masters_dcos_instance_os, var.infra_dcos_instance_os), null)
   resource_group_name               = azurerm_resource_group.rg.name
   subnet_id                         = module.network.subnet_id
   network_security_group_id         = module.network-security-group.masters_nsg_id
@@ -186,13 +186,13 @@ module "private_agents" {
 
   num_private_agents = var.num_private_agents
   location           = var.location
-  disk_size          = coalesce(var.private_agents_disk_size, var.infra_disk_size)
-  disk_type          = coalesce(var.private_agents_disk_type, var.infra_disk_type)
-  vm_size            = coalesce(var.private_agents_vm_size, var.infra_vm_size)
+  disk_size          = try(coalesce(var.private_agents_disk_size, var.infra_disk_size), null)
+  disk_type          = try(coalesce(var.private_agents_disk_type, var.infra_disk_type), null)
+  vm_size            = try(coalesce(var.private_agents_vm_size, var.infra_vm_size), null)
   cluster_name       = var.cluster_name
   name_prefix        = var.name_prefix
   public_ssh_key     = var.ssh_public_key_file
-  admin_username     = coalesce(var.private_agent_ssh_user, var.infra_ssh_user)
+  admin_username     = try(coalesce(var.private_agent_ssh_user, var.infra_ssh_user), null)
   image              = var.private_agents_image
   dcos_instance_os = coalesce(
     var.private_agents_dcos_instance_os,
@@ -217,13 +217,13 @@ module "public_agents" {
 
   num_public_agents = var.num_public_agents
   location          = var.location
-  disk_size         = coalesce(var.public_agents_disk_size, var.infra_disk_size)
-  disk_type         = coalesce(var.public_agents_disk_type, var.infra_disk_type)
-  vm_size           = coalesce(var.public_agents_vm_size, var.infra_vm_size)
+  disk_size         = try(coalesce(var.public_agents_disk_size, var.infra_disk_size), null)
+  disk_type         = try(coalesce(var.public_agents_disk_type, var.infra_disk_type), null)
+  vm_size           = try(coalesce(var.public_agents_vm_size, var.infra_vm_size), null)
   cluster_name      = var.cluster_name
   name_prefix       = var.name_prefix
   public_ssh_key    = var.ssh_public_key_file
-  admin_username    = coalesce(var.public_agent_ssh_user, var.infra_ssh_user)
+  admin_username    = try(coalesce(var.public_agent_ssh_user, var.infra_ssh_user), null)
   image             = var.public_agents_image
   dcos_instance_os = coalesce(
     var.public_agents_dcos_instance_os,
