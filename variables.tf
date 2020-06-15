@@ -19,7 +19,7 @@ variable "bootstrap_vm_size" {
 
 variable "bootstrap_image" {
   description = "[BOOTSTRAP] Image to be used"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
@@ -40,7 +40,7 @@ variable "masters_vm_size" {
 
 variable "masters_image" {
   description = "[MASTERS] Image to be used"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
@@ -61,7 +61,7 @@ variable "private_agents_vm_size" {
 
 variable "private_agents_image" {
   description = "[PRIVATE AGENTS] Image to be used"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
@@ -82,7 +82,7 @@ variable "public_agents_vm_size" {
 
 variable "public_agents_image" {
   description = "[PUBLIC AGENTS] Image to be used"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
@@ -187,7 +187,7 @@ variable "num_public_agents" {
 
 variable "tags" {
   description = "Add custom tags to all resources"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
 
@@ -198,7 +198,7 @@ variable "subnet_range" {
 
 variable "admin_ips" {
   description = "List of CIDR admin IPs"
-  type        = "list"
+  type        = list(string)
 }
 
 variable "public_agents_additional_ports" {
@@ -220,3 +220,4 @@ variable "avset_platform_fault_domain_count" {
   description = "Availability set platform fault domain count, differs from location to location"
   default     = 3
 }
+
