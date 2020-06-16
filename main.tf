@@ -35,7 +35,6 @@ data "null_data_source" "lb_rules" {
 }
 
 provider "azurerm" {
-  version = "~> 1.0"
 }
 
 # Create a resource group
